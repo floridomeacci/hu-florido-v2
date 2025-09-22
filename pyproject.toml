@@ -1,0 +1,10 @@
+[project]
+name = "hu-florido-v2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "wa-analyzer>=0.4.1",
+    "pyarrow>=16.0.0",
+]

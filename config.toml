@@ -1,0 +1,7 @@
+raw = "data/raw"
+processed = "data/processed"
+input = "_chat.txt"
+current = "output.parq"
+inputpath = "output.csv"
+datetime_format = "%m/%d/%y, %H:%M"
+drop_authors = []
