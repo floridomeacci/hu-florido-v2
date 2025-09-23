@@ -1,9 +1,6 @@
 import warnings
-warnings.simplefilter(action="ignore", category=FutureWarning)
-
 import sys
-from pathlib import Path
-
+import tomllib
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -11,14 +8,10 @@ import numpy as np
 import matplotlib.patches as patches
 from matplotlib.patches import Rectangle
 from matplotlib.transforms import blended_transform_factory
+from pathlib import Path
 
-try:
-    import tomllib as toml_loader
-except Exception:
-    try:
-        import tomli as toml_loader
-    except Exception:
-        toml_loader = None
+
+warnings.simplefilter(action="ignore", category=FutureWarning)
 
 COUPLES = {
     "coltish-magpie": "Couple1",
@@ -117,12 +110,8 @@ def annotate_couple_brackets(
             )
 
 def load_config(root: Path) -> dict:
-    if toml_loader is None:
-        raise RuntimeError(
-            "No TOML loader available. Use Python 3.11+ (tomllib) or install 'tomli'."
-        )
     with (root / "config.toml").open("rb") as f:
-        return toml_loader.load(f)
+        return tomllib.load(f)
 
 def resolve_paths():
     here = Path(__file__).resolve()
