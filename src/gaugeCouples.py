@@ -7,6 +7,18 @@ from pathlib import Path
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.patches as patches
+from matplotlib.patches import Rectangle
+from matplotlib.transforms import blended_transform_factory
+
+try:
+    import tomllib as toml_loader
+except Exception:
+    try:
+        import tomli as toml_loader
+    except Exception:
+        toml_loader = None
 
 COUPLES = {
     "coltish-magpie": "Couple1",
@@ -16,6 +28,7 @@ COUPLES = {
     "scintillating-trout": "Couple3",
     "jesting-duck": "Couple3",
 }
+
 
 COUPLE_ORDER = ["Couple1", "Couple2", "Couple3"]
 COUPLE_AUTHOR_ORDER = {
@@ -49,7 +62,7 @@ def palette_for_authors(author_series_or_index):
     uniq = pd.Index(author_series_or_index).unique()
     return {a: author_colors.get(a, "#999999") for a in uniq}
 
-from matplotlib.transforms import blended_transform_factory
+ 
 
 COUPLE_LABELS = {"Couple1": "Couple 1", "Couple2": "Couple 2", "Couple3": "Couple 3"}
 
@@ -104,14 +117,12 @@ def annotate_couple_brackets(
             )
 
 def load_config(root: Path) -> dict:
-    try:
-        import tomllib
-        with (root / "config.toml").open("rb") as f:
-            return tomllib.load(f)
-    except ModuleNotFoundError:
-        import tomli
-        with (root / "config.toml").open("rb") as f:
-            return tomli.load(f)
+    if toml_loader is None:
+        raise RuntimeError(
+            "No TOML loader available. Use Python 3.11+ (tomllib) or install 'tomli'."
+        )
+    with (root / "config.toml").open("rb") as f:
+        return toml_loader.load(f)
 
 def resolve_paths():
     here = Path(__file__).resolve()
@@ -130,9 +141,6 @@ def create_gauge_chart(ax, person_a_count, person_b_count, person_a_name, person
     else:
         person_a_pct = person_a_count / total
         person_b_pct = person_b_count / total
-    
-    import matplotlib.patches as patches
-    import numpy as np
     
     ax.clear()
     
@@ -249,7 +257,6 @@ def main():
     fig.suptitle('One Voice Always Dominates\nPer Couple', 
                  fontsize=32, fontweight='bold', y=0.95)
     
-    from matplotlib.patches import Rectangle
     legend_elements = [
         Rectangle((0,0),1,1, facecolor='#333333', alpha=0.8, label='Male (Dark)'),
         Rectangle((0,0),1,1, facecolor='#CCCCCC', alpha=0.8, label='Female (Light)')
