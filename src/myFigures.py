@@ -278,6 +278,84 @@ def distribution_categories_2(df: Optional[pd.DataFrame] = None, settings: Optio
     return out
 
 
+def distribution_categories_3(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
+    if settings is None:
+        settings = load_settings()
+    if df is None:
+        df = _load_processed_df(settings)
+
+    couples_data = df[df['couples'].isin(settings.couples)].copy()
+    couples_data = couples_data[couples_data['message'] != '<Media omitted>']
+    couples_data[settings.time_col] = pd.to_datetime(couples_data[settings.time_col])
+    couples_data['hour'] = couples_data[settings.time_col].dt.hour
+    couples_data['gender_mapped'] = couples_data['gender'].map({'male': 'male', 'female': 'female', 'M': 'male', 'F': 'female'})
+    couples_data = couples_data.dropna(subset=['gender_mapped'])
+
+    hours = np.arange(24)
+    fig, ax = plt.subplots(figsize=(14, 8))
+
+    gender_colors = {'male': '#1E3A8A', 'female': '#FF69B4'}
+    gender_labels = {'male': 'Men', 'female': 'Women'}
+
+    counts_male = np.array([(couples_data[(couples_data['hour'] == h) & (couples_data['gender_mapped'] == 'male')].shape[0]) for h in hours], dtype=float)
+    counts_female = np.array([(couples_data[(couples_data['hour'] == h) & (couples_data['gender_mapped'] == 'female')].shape[0]) for h in hours], dtype=float)
+
+    total_messages = len(couples_data)
+    male_percentages = (counts_male / total_messages) * 100.0 if total_messages > 0 else np.zeros_like(counts_male)
+    female_percentages = (counts_female / total_messages) * 100.0 if total_messages > 0 else np.zeros_like(counts_female)
+
+    total_male = counts_male.sum()
+    total_female = counts_female.sum()
+    lam_male = float((hours * counts_male).sum() / total_male) if total_male > 0 else float('nan')
+    lam_female = float((hours * counts_female).sum() / total_female) if total_female > 0 else float('nan')
+    male_total_pct = float(male_percentages.sum())
+    female_total_pct = float(female_percentages.sum())
+
+    def scaled_hour_poisson(lam: float, total_pct: float) -> np.ndarray:
+        if not np.isfinite(lam) or lam <= 0:
+            return np.zeros_like(hours, dtype=float)
+        pmf = poisson.pmf(hours, mu=lam)
+        return (pmf / pmf.sum() * total_pct) if pmf.sum() > 0 else np.zeros_like(hours, dtype=float)
+
+    male_fit = scaled_hour_poisson(lam_male, male_total_pct)
+    female_fit = scaled_hour_poisson(lam_female, female_total_pct)
+
+    label_m = f"Men (λ={lam_male:.2f}h)" if np.isfinite(lam_male) else "Men (λ=–)"
+    label_f = f"Women (λ={lam_female:.2f}h)" if np.isfinite(lam_female) else "Women (λ=–)"
+
+    ax.plot(hours, male_fit, color=gender_colors['male'], linewidth=3, marker='o', markersize=6, label=label_m, alpha=0.9)
+    ax.plot(hours, female_fit, color=gender_colors['female'], linewidth=3, marker='o', markersize=6, label=label_f, alpha=0.9)
+
+    ax.set_xlabel('Hour of Day', fontsize=14)
+    ax.set_ylabel('% of Total Messages (Poisson fit)', fontsize=14)
+    fig.suptitle('Men vs Women\nHour Distribution (Poisson fit)', fontsize=32, fontweight='bold', x=0.06, y=0.95, ha='left')
+
+    ax.set_xticks(range(0, 24, 2))
+    ax.set_xticklabels([f"{hour}h" for hour in range(0, 24, 2)])
+
+    max_pct = max(male_fit.max() if male_fit.size else 0, female_fit.max() if female_fit.size else 0)
+    ax.set_ylim(0, max_pct * 1.1 if max_pct > 0 else 1)
+
+    ax.legend(loc='upper right', bbox_to_anchor=(1.0, 1.15), frameon=True, fancybox=True, shadow=True, fontsize=12)
+    ax.grid(True, alpha=0.3, linestyle='--')
+    ax.set_axisbelow(True)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.82)
+    img_dir = REPO_ROOT / 'img'
+    img_dir.mkdir(exist_ok=True)
+    out = img_dir / 'distribution_categories_3.png'
+    plt.savefig(out, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
+    plt.close(fig)
+    try:
+        print(f"distribution_categories_3 lambdas: Men={lam_male:.3f}h, Women={lam_female:.3f}h")
+    except Exception:
+        pass
+    return out
+
+
 def distribution_categories_1(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
     if settings is None:
         settings = load_settings()
@@ -808,6 +886,7 @@ if __name__ == "__main__":
     paths = [
         comparing_categories_1(dframe),
         distribution_categories_2(dframe),
+    distribution_categories_3(dframe),
         distribution_categories_1(dframe),
         comparing_categories_2(dframe),
         time_series(dframe),
