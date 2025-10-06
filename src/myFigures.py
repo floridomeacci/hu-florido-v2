@@ -81,7 +81,7 @@ def _load_processed_df(settings: Optional[Settings] = None) -> pd.DataFrame:
     raise FileNotFoundError("Processed data not found. Expected data/processed/output.csv|.parq or path from config.toml.")
 
 
-def plot_gauge_couples(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
+def comparing_categories_1(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
     sns.set(style="whitegrid")
     if settings is None:
         settings = load_settings()
@@ -181,7 +181,7 @@ def plot_gauge_couples(df: Optional[pd.DataFrame] = None, settings: Optional[Set
     return output_path
 
 
-def plot_timeline_couples_bars_hours(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
+def distribution_categories_2(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
     if settings is None:
         settings = load_settings()
     if df is None:
@@ -278,7 +278,7 @@ def plot_timeline_couples_bars_hours(df: Optional[pd.DataFrame] = None, settings
     return out
 
 
-def plot_timeline_couples_bars_weekdays(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
+def distribution_categories_1(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
     if settings is None:
         settings = load_settings()
     if df is None:
@@ -373,7 +373,7 @@ def plot_timeline_couples_bars_weekdays(df: Optional[pd.DataFrame] = None, setti
     return out
 
 
-def plot_timeline_couples_columns(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
+def comparing_categories_2(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
     if settings is None:
         settings = load_settings()
     if df is None:
@@ -472,7 +472,7 @@ def plot_timeline_couples_columns(df: Optional[pd.DataFrame] = None, settings: O
     return out
 
 
-def plot_time_series(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
+def time_series(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
     if settings is None:
         settings = load_settings()
     if df is None:
@@ -582,7 +582,7 @@ def plot_time_series(df: Optional[pd.DataFrame] = None, settings: Optional[Setti
     return output_path
 
 
-def plot_time_series_couples(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
+def time_series_2(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
     if settings is None:
         settings = load_settings()
     if df is None:
@@ -700,7 +700,7 @@ def plot_time_series_couples(df: Optional[pd.DataFrame] = None, settings: Option
     return output_path
 
 
-def plot_time_series_combined(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
+def time_series_3(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
     if settings is None:
         settings = load_settings()
     if df is None:
@@ -802,570 +802,17 @@ def plot_time_series_combined(df: Optional[pd.DataFrame] = None, settings: Optio
     return output_path
 
 
-def plot_response_times_distribution(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
-    if settings is None:
-        settings = load_settings()
-    if df is None:
-        df = _load_processed_df(settings)
-
-    time_col = settings.time_col
-    if time_col not in df.columns:
-        raise ValueError(f"Dataframe must contain time column '{time_col}'.")
-
-    if not np.issubdtype(df[time_col].dtype, np.datetime64):
-        df = df.copy()
-        df[time_col] = pd.to_datetime(df[time_col], errors='coerce')
-    df = df.dropna(subset=[time_col])
-
-    if 'gender' not in df.columns:
-        raise ValueError("Dataframe must contain 'gender' column.")
-
-    gender_map = {
-        'male': 'male', 'female': 'female',
-        'M': 'male', 'F': 'female',
-        'man': 'male', 'woman': 'female',
-    }
-    df = df.copy()
-    df['gender_mapped'] = df['gender'].map(gender_map)
-    df = df.dropna(subset=['gender_mapped'])
-
-    if 'couples' not in df.columns:
-        df['couples'] = 'all'
-
-    male_deltas: List[float] = []
-    female_deltas: List[float] = []
-
-    for _, g in df.groupby('couples'):
-        g = g.sort_values(time_col)
-        times = g[time_col].to_numpy()
-        gens = g['gender_mapped'].to_numpy()
-        for i in range(len(g) - 1):
-            if gens[i] != gens[i + 1]:
-                delta_min = (times[i + 1] - times[i]).astype('timedelta64[m]').astype(float)
-                if delta_min is None or np.isnan(delta_min):
-                    continue
-                if 0 < delta_min <= 1440.0:
-                    responder = gens[i + 1]
-                    if responder == 'male':
-                        male_deltas.append(delta_min)
-                    elif responder == 'female':
-                        female_deltas.append(delta_min)
-
-    if len(male_deltas) == 0 and len(female_deltas) == 0:
-        raise ValueError("No response events found to compute response times.")
-
-    bins = np.arange(0, 1440 + 5, 5)
-    bin_centers = (bins[:-1] + bins[1:]) / 2
-
-    def hist_pct(values: List[float]) -> np.ndarray:
-        if len(values) == 0:
-            return np.zeros(len(bins) - 1)
-        counts, _ = np.histogram(values, bins=bins)
-        total = counts.sum()
-        return (counts / total * 100.0) if total > 0 else np.zeros_like(counts)
-
-    lam_m = float(np.mean(male_deltas)) if len(male_deltas) > 0 else 0.0
-    lam_f = float(np.mean(female_deltas)) if len(female_deltas) > 0 else 0.0
-
-    x_grid = np.arange(0, 1440 + 1, 1)
-    male_curve = poisson.pmf(x_grid, mu=max(lam_m, 1e-9)) * 100.0
-    female_curve = poisson.pmf(x_grid, mu=max(lam_f, 1e-9)) * 100.0
-
-    bin_centers = x_grid
-    male_smooth = male_curve
-    female_smooth = female_curve
-
-    sns.set(style="whitegrid")
-    fig, ax = plt.subplots(figsize=(24, 7))
-    fig.patch.set_facecolor('white')
-    ax.set_facecolor('#fafafa')
-
-    ax.fill_between(bin_centers, female_smooth, color='#FF69B4', alpha=0.5, zorder=0, label='Women')
-    ax.fill_between(bin_centers, male_smooth, color='#1E3A8A', alpha=0.5, zorder=1, label='Men')
-
-    ax.set_xlabel('Response time (minutes, 5-min bins, ≤24h responses only)', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Responses (%)', fontsize=12, fontweight='bold')
-    ax.set_title('Response Times (Poisson): Men vs Women', fontsize=18, fontweight='bold', pad=12, loc='left')
-    ax.legend(frameon=True)
-    ax.grid(True, alpha=0.3, linestyle='--')
-    ax.set_axisbelow(True)
-
-    ax.set_xticks(np.arange(60, 361, 30))
-    ax.set_xlim(60, 360)
-
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-
-    plt.tight_layout()
-
-    img_dir = REPO_ROOT / 'img'
-    img_dir.mkdir(exist_ok=True)
-    out = img_dir / 'response_times.png'
-    plt.savefig(out, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
-    plt.close(fig)
-    return out
-
-
-def plot_response_times_skewnorm(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
-    if settings is None:
-        settings = load_settings()
-    if df is None:
-        df = _load_processed_df(settings)
-
-    time_col = settings.time_col
-    if time_col not in df.columns:
-        raise ValueError(f"Dataframe must contain time column '{time_col}'.")
-
-    if not np.issubdtype(df[time_col].dtype, np.datetime64):
-        df = df.copy()
-        df[time_col] = pd.to_datetime(df[time_col], errors='coerce')
-    df = df.dropna(subset=[time_col])
-
-    if 'gender' not in df.columns:
-        raise ValueError("Dataframe must contain 'gender' column.")
-
-    gender_map = {
-        'male': 'male', 'female': 'female',
-        'M': 'male', 'F': 'female',
-        'man': 'male', 'woman': 'female',
-    }
-    df = df.copy()
-    df['gender_mapped'] = df['gender'].map(gender_map)
-    df = df.dropna(subset=['gender_mapped'])
-
-    if 'couples' not in df.columns:
-        df['couples'] = 'all'
-
-    male_deltas: List[float] = []
-    female_deltas: List[float] = []
-
-    for _, g in df.groupby('couples'):
-        g = g.sort_values(time_col)
-        times = g[time_col].to_numpy()
-        gens = g['gender_mapped'].to_numpy()
-        for i in range(len(g) - 1):
-            if gens[i] != gens[i + 1]:
-                delta_min = (times[i + 1] - times[i]).astype('timedelta64[m]').astype(float)
-                if delta_min is None or np.isnan(delta_min):
-                    continue
-                if 0 < delta_min <= 1440.0:
-                    if gens[i + 1] == 'male':
-                        male_deltas.append(delta_min)
-                    else:
-                        female_deltas.append(delta_min)
-
-    if len(male_deltas) == 0 and len(female_deltas) == 0:
-        raise ValueError("No response events found to compute response times.")
-
-    lam_m = float(np.mean(male_deltas)) if len(male_deltas) > 0 else 0.0
-    lam_f = float(np.mean(female_deltas)) if len(female_deltas) > 0 else 0.0
-
-    x_grid = np.arange(0, 1440 + 1)
-    male_curve = poisson.pmf(x_grid, mu=max(lam_m, 1e-9)) * 100.0
-    female_curve = poisson.pmf(x_grid, mu=max(lam_f, 1e-9)) * 100.0
-
-    sns.set(style="whitegrid")
-    fig, ax = plt.subplots(figsize=(24, 7))
-    fig.patch.set_facecolor('white')
-    ax.set_facecolor('#fafafa')
-
-    ax.fill_between(x_grid, female_curve, color='#FF69B4', alpha=0.5, zorder=0, label='Women')
-    ax.fill_between(x_grid, male_curve, color='#1E3A8A', alpha=0.5, zorder=1, label='Men')
-
-    ax.set_xlabel('Response time (minutes, ≤24h responses only)', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Responses (%)', fontsize=12, fontweight='bold')
-    ax.set_title('Response Times (Poisson): Men vs Women', fontsize=18, fontweight='bold', pad=12, loc='left')
-    ax.legend(frameon=True)
-    ax.grid(True, alpha=0.3, linestyle='--')
-    ax.set_axisbelow(True)
-
-    ax.set_xticks(np.arange(60, 361, 30))
-    ax.set_xlim(60, 360)
-
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-
-    plt.tight_layout()
-
-    img_dir = REPO_ROOT / 'img'
-    img_dir.mkdir(exist_ok=True)
-    out = img_dir / 'response_times_skewnorm.png'
-    plt.savefig(out, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
-    plt.close(fig)
-    return out
-
-
-def plot_sankey_responses(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
-    try:
-        import plotly.graph_objects as go  # type: ignore
-        from plotly.offline import plot  # type: ignore
-    except ImportError:
-        raise ImportError("Plotly not installed and alluvial fallback is disabled.")
-    
-    if settings is None:
-        settings = load_settings()
-    if df is None:
-        df = _load_processed_df(settings)
-
-    couples_data = df[df['couples'].isin(settings.couples)].copy()
-    if couples_data.empty:
-        raise ValueError("No couple data found in dataframe.")
-    
-    couples_data['gender_mapped'] = couples_data['gender'].map({
-        'male': 'male',
-        'female': 'female',
-        'M': 'male',
-        'F': 'female'
-    })
-    
-    couples_data = couples_data.dropna(subset=['gender_mapped'])
-    couples_data = couples_data.sort_values(settings.time_col)
-    
-    men_to_women = 0
-    women_to_men = 0
-    for _, g in couples_data.groupby('couples'):
-        g_sorted = g.sort_values(settings.time_col)
-        genders = g_sorted['gender_mapped'].to_numpy()
-        for i in range(len(genders) - 1):
-            a, b = genders[i], genders[i + 1]
-            if a == 'male' and b == 'female':
-                men_to_women += 1
-            elif a == 'female' and b == 'male':
-                women_to_men += 1
-    if men_to_women == 0 and women_to_men == 0:
-        men_to_women = 1
-        women_to_men = 1
-    label = ["Men", "Women"]
-    source = [0, 1]
-    target = [1, 0]
-    value = [men_to_women, women_to_men]
-    link_colors = ["rgba(59,130,246,0.6)", "rgba(236,72,153,0.6)"]
-    node_colors = ["rgba(37,99,235,0.9)", "rgba(219,39,119,0.9)"]
-    
-    sankey = go.Sankey(
-        node=dict(
-            pad=20,
-            thickness=24,
-            line=dict(color="white", width=1),
-            label=label,
-            color=node_colors,
-        ),
-        link=dict(
-            source=source,
-            target=target,
-            value=value,
-            color=link_colors,
-        ),
-        arrangement="snap",
-        domain=dict(x=[0.0, 1.0], y=[0.0, 1.0]),
-    )
-    fig = go.Figure(sankey)
-    fig.update_layout(
-        title_text="Message Flow Between Men and Women",
-        font=dict(size=14),
-        paper_bgcolor="white",
-        plot_bgcolor="white",
-        margin=dict(l=20, r=20, t=60, b=20),
-    )
-
-    # Save to HTML
-    img_dir = REPO_ROOT / 'img'
-    img_dir.mkdir(exist_ok=True)
-    out = img_dir / 'sankey_responses.html'
-    plot(fig, filename=str(out), auto_open=False)
-    return out
-
-
-def plot_response_times_poisson_by_couple(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
-    if settings is None:
-        settings = load_settings()
-    if df is None:
-        df = _load_processed_df(settings)
-
-    time_col = settings.time_col
-    if time_col not in df.columns:
-        raise ValueError(f"Dataframe must contain time column '{time_col}'.")
-
-    if not np.issubdtype(df[time_col].dtype, np.datetime64):
-        df = df.copy()
-        df[time_col] = pd.to_datetime(df[time_col], errors='coerce')
-    df = df.dropna(subset=[time_col])
-
-    if 'gender' not in df.columns:
-        raise ValueError("Dataframe must contain 'gender' column.")
-
-    gender_map = {'male': 'male', 'female': 'female', 'M': 'male', 'F': 'female', 'man': 'male', 'woman': 'female'}
-    df = df.copy()
-    df['gender_mapped'] = df['gender'].map(gender_map)
-    df = df.dropna(subset=['gender_mapped'])
-
-    if 'couples' not in df.columns:
-        df['couples'] = 'all'
-
-    couple_deltas: Dict[str, List[float]] = {}
-    for couple, g in df.groupby('couples'):
-        g = g.sort_values(time_col)
-        times = g[time_col].to_numpy()
-        gens = g['gender_mapped'].to_numpy()
-        deltas: List[float] = []
-        for i in range(len(g) - 1):
-            if gens[i] != gens[i + 1]:
-                delta_min = (times[i + 1] - times[i]).astype('timedelta64[m]').astype(float)
-                if delta_min is None or np.isnan(delta_min):
-                    continue
-                if 0 < delta_min <= 1440.0:
-                    deltas.append(delta_min)
-        if deltas:
-            couple_deltas[couple] = deltas
-
-    if not couple_deltas:
-        raise ValueError("No response events found to compute response times.")
-
-    lambdas: Dict[str, float] = {c: float(np.mean(v)) for c, v in couple_deltas.items()}
-    x_vals = np.arange(0, 1440 + 1)
-
-    palette = ['#1E3A8A', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#06B6D4']
-    couples_list = [c for c in settings.couples if c in couple_deltas] or list(couple_deltas.keys())
-    colors = {c: palette[i % len(palette)] for i, c in enumerate(couples_list)}
-
-    pmfs: Dict[str, np.ndarray] = {}
-    for cpl in couples_list:
-        lam = lambdas.get(cpl, None)
-        if lam is None or lam <= 0:
-            pmf = np.zeros_like(x_vals, dtype=float)
-        else:
-            pmf = poisson.pmf(x_vals, mu=lam) * 100.0
-        pmfs[cpl] = pmf
-
-    sns.set(style="whitegrid")
-    fig, ax = plt.subplots(figsize=(24, 8))
-    fig.patch.set_facecolor('white')
-    ax.set_facecolor('#fafafa')
-
-    for cpl in couples_list:
-        ax.fill_between(x_vals, pmfs[cpl], color=colors[cpl], alpha=0.5, label=cpl)
-
-    ax.set_xlabel('Response time (minutes, integer)', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Probability (%) — Poisson PMF', fontsize=12, fontweight='bold')
-    ax.set_title('Response Times per Couple (Poisson fit)', fontsize=18, fontweight='bold', pad=12, loc='left')
-    ax.legend(frameon=True, title='Couple')
-    ax.grid(True, alpha=0.3, linestyle='--')
-    ax.set_axisbelow(True)
-
-    ax.set_xticks(np.arange(0, 421, 60))
-    ax.set_xlim(0, 420)
-
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-
-    plt.tight_layout()
-    img_dir = REPO_ROOT / 'img'
-    img_dir.mkdir(exist_ok=True)
-    out = img_dir / 'response_times_poisson_by_couple.png'
-    plt.savefig(out, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
-    plt.close(fig)
-    return out
-
-
-def plot_response_times_lognorm(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
-    if settings is None:
-        settings = load_settings()
-    if df is None:
-        df = _load_processed_df(settings)
-
-    time_col = settings.time_col
-    if time_col not in df.columns:
-        raise ValueError(f"Dataframe must contain time column '{time_col}'.")
-
-    if not np.issubdtype(df[time_col].dtype, np.datetime64):
-        df = df.copy()
-        df[time_col] = pd.to_datetime(df[time_col], errors='coerce')
-    df = df.dropna(subset=[time_col])
-
-    if 'gender' not in df.columns:
-        raise ValueError("Dataframe must contain 'gender' column.")
-
-    gender_map = {'male': 'male', 'female': 'female', 'M': 'male', 'F': 'female', 'man': 'male', 'woman': 'female'}
-    df = df.copy()
-    df['gender_mapped'] = df['gender'].map(gender_map)
-    df = df.dropna(subset=['gender_mapped'])
-
-    if 'couples' not in df.columns:
-        df['couples'] = 'all'
-
-    male_deltas: List[float] = []
-    female_deltas: List[float] = []
-    for _, g in df.groupby('couples'):
-        g = g.sort_values(time_col)
-        times = g[time_col].to_numpy()
-        gens = g['gender_mapped'].to_numpy()
-        for i in range(len(g) - 1):
-            if gens[i] != gens[i + 1]:
-                delta_min = (times[i + 1] - times[i]).astype('timedelta64[m]').astype(float)
-                if delta_min is None or np.isnan(delta_min):
-                    continue
-                if 0 < delta_min <= 1440.0:
-                    if gens[i + 1] == 'male':
-                        male_deltas.append(delta_min)
-                    else:
-                        female_deltas.append(delta_min)
-
-    if len(male_deltas) == 0 and len(female_deltas) == 0:
-        raise ValueError("No response events found to compute response times.")
-
-    def fit_lognormal(values: List[float]) -> tuple[float, float]:
-        arr = np.array([v for v in values if v > 0])
-        if arr.size < 3:
-            return 0.75, 1.0
-        logs = np.log(arr)
-        mu = float(np.mean(logs))
-        sigma = float(np.std(logs, ddof=1))
-        sigma = max(sigma, 1e-6)
-        return sigma, float(np.exp(mu))
-
-    s_m, scale_m = fit_lognormal(male_deltas)
-    s_f, scale_f = fit_lognormal(female_deltas)
-
-    x_grid = np.arange(1, 1441, 1)
-    male_curve = lognorm.pdf(x_grid, s=s_m, loc=0, scale=scale_m) * 100.0
-    female_curve = lognorm.pdf(x_grid, s=s_f, loc=0, scale=scale_f) * 100.0
-
-    sns.set(style="whitegrid")
-    fig, ax = plt.subplots(figsize=(24, 7))
-    fig.patch.set_facecolor('white')
-    ax.set_facecolor('#fafafa')
-
-    ax.fill_between(x_grid, female_curve, color='#FF69B4', alpha=0.5, zorder=0, label='Women')
-    ax.fill_between(x_grid, male_curve, color='#1E3A8A', alpha=0.5, zorder=1, label='Men')
-
-    ax.set_xlabel('Response time (minutes, ≤24h responses only)', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Responses (%)', fontsize=12, fontweight='bold')
-    ax.set_title('Response Times (Log-normal): Men vs Women', fontsize=18, fontweight='bold', pad=12, loc='left')
-    ax.legend(frameon=True)
-    ax.grid(True, alpha=0.3, linestyle='--')
-    ax.set_axisbelow(True)
-
-    ax.set_xticks(np.arange(0, 1441, 60))
-    ax.set_xlim(0, 1440)
-
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-
-    plt.tight_layout()
-    img_dir = REPO_ROOT / 'img'
-    img_dir.mkdir(exist_ok=True)
-    out = img_dir / 'response_times_lognorm.png'
-    plt.savefig(out, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
-    plt.close(fig)
-    return out
-
-
-def plot_response_times_lognorm_by_couple(df: Optional[pd.DataFrame] = None, settings: Optional[Settings] = None) -> Path:
-    if settings is None:
-        settings = load_settings()
-    if df is None:
-        df = _load_processed_df(settings)
-
-    time_col = settings.time_col
-    if time_col not in df.columns:
-        raise ValueError(f"Dataframe must contain time column '{time_col}'.")
-
-    if not np.issubdtype(df[time_col].dtype, np.datetime64):
-        df = df.copy()
-        df[time_col] = pd.to_datetime(df[time_col], errors='coerce')
-    df = df.dropna(subset=[time_col])
-
-    if 'gender' not in df.columns:
-        raise ValueError("Dataframe must contain 'gender' column.")
-
-    gender_map = {'male': 'male', 'female': 'female', 'M': 'male', 'F': 'female', 'man': 'male', 'woman': 'female'}
-    df = df.copy()
-    df['gender_mapped'] = df['gender'].map(gender_map)
-    df = df.dropna(subset=['gender_mapped'])
-
-    if 'couples' not in df.columns:
-        df['couples'] = 'all'
-
-    couple_deltas: Dict[str, List[float]] = {}
-    for couple, g in df.groupby('couples'):
-        g = g.sort_values(time_col)
-        times = g[time_col].to_numpy()
-        gens = g['gender_mapped'].to_numpy()
-        deltas: List[float] = []
-        for i in range(len(g) - 1):
-            if gens[i] != gens[i + 1]:
-                delta_min = (times[i + 1] - times[i]).astype('timedelta64[m]').astype(float)
-                if delta_min is None or np.isnan(delta_min):
-                    continue
-                if 0 < delta_min <= 1440.0:
-                    deltas.append(delta_min)
-        if deltas:
-            couple_deltas[couple] = deltas
-
-    if not couple_deltas:
-        raise ValueError("No response events found to compute response times.")
-
-    def fit_lognormal(values: List[float]) -> tuple[float, float]:
-        arr = np.array([v for v in values if v > 0])
-        if arr.size < 3:
-            return 0.75, 1.0
-        logs = np.log(arr)
-        mu = float(np.mean(logs))
-        sigma = float(np.std(logs, ddof=1))
-        sigma = max(sigma, 1e-6)
-        return sigma, float(np.exp(mu))
-
-    x_grid = np.arange(1, 1441, 1)
-    couples_list = [c for c in settings.couples if c in couple_deltas] or list(couple_deltas.keys())
-    palette = ['#1E3A8A', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#06B6D4']
-    colors = {c: palette[i % len(palette)] for i, c in enumerate(couples_list)}
-
-    sns.set(style="whitegrid")
-    fig, ax = plt.subplots(figsize=(24, 8))
-    fig.patch.set_facecolor('white')
-    ax.set_facecolor('#fafafa')
-
-    for cpl in couples_list:
-        s, scale = fit_lognormal(couple_deltas.get(cpl, []))
-        curve = lognorm.pdf(x_grid, s=s, loc=0, scale=scale) * 100.0
-        ax.fill_between(x_grid, curve, color=colors[cpl], alpha=0.5, label=cpl)
-
-    ax.set_xlabel('Response time (minutes, ≤24h responses only)', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Responses (%)', fontsize=12, fontweight='bold')
-    ax.set_title('Response Times per Couple (Log-normal fit)', fontsize=18, fontweight='bold', pad=12, loc='left')
-    ax.legend(frameon=True, title='Couple')
-    ax.grid(True, alpha=0.3, linestyle='--')
-    ax.set_axisbelow(True)
-
-    ax.set_xticks(np.arange(0, 1441, 60))
-    ax.set_xlim(0, 1440)
-
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-
-    plt.tight_layout()
-    img_dir = REPO_ROOT / 'img'
-    img_dir.mkdir(exist_ok=True)
-    out = img_dir / 'response_times_lognorm_by_couple.png'
-    plt.savefig(out, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
-    plt.close(fig)
-    return out
 
 if __name__ == "__main__":
     dframe = _load_processed_df()
     paths = [
-        plot_gauge_couples(dframe),
-        plot_timeline_couples_bars_hours(dframe),
-        plot_timeline_couples_bars_weekdays(dframe),
-        plot_timeline_couples_columns(dframe),
-        plot_time_series(dframe),
-        plot_time_series_couples(dframe),
-        plot_time_series_combined(dframe),
-        plot_response_times_distribution(dframe),
-        # plot_response_times_skewnorm(dframe),
-        plot_response_times_poisson_by_couple(dframe),
-        plot_response_times_lognorm(dframe),
-        plot_response_times_lognorm_by_couple(dframe),
+        comparing_categories_1(dframe),
+        distribution_categories_2(dframe),
+        distribution_categories_1(dframe),
+        comparing_categories_2(dframe),
+        time_series(dframe),
+        time_series_2(dframe),
+        time_series_3(dframe),
     ]
     print("Generated:")
     for p in paths:

@@ -10,28 +10,28 @@ __version__ = "2.0.0"
 __author__ = "Florido Meacci"
 
 from .myFigures import (
-    plot_gauge_couples,
-    plot_timeline_couples_bars,
-    plot_timeline_couples_bars_hours,
-    plot_timeline_couples_columns,
-    plot_time_series,
-    plot_time_series_couples,
-    plot_time_series_combined,
-    plot_response_times_distribution,
-    plot_response_times_skewnorm,
+    comparing_categories_1,
+    distribution_categories_2,
+    distribution_categories_1,
+    comparing_categories_2,
+    time_series,
+    time_series_2,
+    time_series_3,
+    response_times,
+    response_times_skewnorm,
 )
 
 from .myPreprocess import main as preprocess
 
 __all__ = [
-    "plot_gauge_couples",
-    "plot_timeline_couples_bars", 
-    "plot_timeline_couples_bars_hours",
-    "plot_timeline_couples_columns",
-    "plot_time_series",
-    "plot_time_series_couples", 
-    "plot_time_series_combined",
-    "plot_response_times_distribution",
-    "plot_response_times_skewnorm",
+    "comparing_categories_1",
+    "distribution_categories_2", 
+    "distribution_categories_1",
+    "comparing_categories_2",
+    "time_series",
+    "time_series_2", 
+    "time_series_3",
+    "response_times",
+    "response_times_skewnorm",
     "preprocess",
 ]
