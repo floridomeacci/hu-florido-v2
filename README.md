@@ -1,84 +1,75 @@
-Florido Jan Meacci
+# hu-florido-v2
 
-Overview
+WhatsApp analytics focused on three anonymised couples. The pipeline ingests an exported chat log, enriches it with couple and gender metadata, and renders a gallery of publication-ready plots that surface who talks most, when conversations happen, and how family-related topics evolve over time.
 
-This project processes WhatsApp chat exports and generates comprehensive visualizations to explore messaging dynamics between three couples. It includes:
-- Data preprocessing that anonymizes authors, adds gender, and maps people to couples
-- Seven distinct visualization types analyzing different aspects of communication patterns:
-  - Semicircular gauge charts showing messaging dominance per couple
-  - Character count distribution analysis (Men vs Women)
-  - Hour-of-day distribution analysis (Men vs Women) 
-  - Three-column timeline with 100% stacked distributions by gender per quarter
-  - Time series analysis of child/family-related word usage
-  - Comparative time series for couples with vs without children
-  - Combined time series showing overall family word trends
+## Overview
 
-Project structure
+- Cleans and normalises WhatsApp exports (CSV or Parquet)
+- Maps real names or pseudonyms to couples and genders
+- Produces nine figures covering dominance, timing, and topic trends
+- Highlights notable behaviours such as “Men rule the day” vs “Women rule the night” messaging peaks
+
+## Project structure
 
 ```
 .
-├── config.toml                  # Paths to input and processed data
+├── config.toml
 ├── data/
 │   ├── processed/
-│   │   ├── couples_reference.json  # Real or pseudonym → couple mapping
-│   │   ├── output.csv              # Preprocessed messages (generated)
-│   │   └── output.parq             # Parquet version (generated)
+│   │   ├── couples_reference.json
+│   │   ├── output.csv
+│   │   └── output.parq
 │   └── raw/
-├── img/                         # Generated visualizations
-│   ├── comparing_categories_1.png   # Semicircular gauge charts
-│   ├── comparing_categories_2.png   # Three-column timeline
-│   ├── distribution_categories.png  # Character count distribution
-│   ├── distribution_categories_2.png# Hour-of-day distribution
-│   ├── time_series.png             # Men vs Women child word trends
-│   ├── time_series_2.png           # With/Without children comparison
-│   └── time_series_3.png           # Combined family word trends
+├── img/
+│   ├── comparing_categories_1.png
+│   ├── comparing_categories_2.png
+│   ├── distribution_categories_1.png
+│   ├── distribution_categories_2.png
+│   ├── distribution_categories_4.png
+│   ├── distribution_categories_5.png
+│   ├── time_series.png
+│   ├── time_series_2.png
+│   └── time_series_3.png
 ├── src/
-│   ├── myFigures.py                # Unified plotting system (all charts)
-│   └── myPreprocess.py             # Preprocessing pipeline
-├── pyproject.toml                  # Python project config (>=3.12)
+│   ├── myFigures.py
+│   └── myPreprocess.py
+├── pyproject.toml
 └── README.md
 ```
 
-Requirements
+## Requirements
 
 - macOS (tested) with Python 3.12+
-- Dependencies (managed via pyproject):
-	- wa-analyzer
-	- pyarrow
-	- matplotlib
-	- pandas
-	- numpy
-	- scipy (for smooth interpolation)
-- Optional (recommended): uv (fast Python package/deps manager)
+- Dependencies managed via `pyproject.toml`:
+  - wa-analyzer
+  - pandas, numpy, pyarrow
+  - matplotlib, seaborn
+  - scipy (spline smoothing)
+- Optional: [uv](https://github.com/astral-sh/uv) for fast environment management
 
-Setup
+## Setup
 
-Option A: Using uv (recommended)
+### Option A: uv (recommended)
 
 ```sh
-# Install uv (if you don't have it)
 curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Create and activate a virtual environment in .venv
 uv venv .venv
 source .venv/bin/activate
-
-# Install dependencies from pyproject
 uv sync
 ```
 
-Option B: Using venv + pip
+### Option B: venv + pip
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -U pip
-pip install wa-analyzer pyarrow matplotlib pandas numpy scipy
+pip install wa-analyzer pyarrow matplotlib seaborn pandas numpy scipy
 ```
 
-Configuration
+## Configuration
 
-Edit `config.toml` to point to your WhatsApp export and processed paths. Example:
+Point `config.toml` at your preferred inputs:
 
 ```toml
 processed = "data/processed"
@@ -86,93 +77,67 @@ current = "output.parq"
 inputpath = "data/raw/whatsapp.txt"
 ```
 
-Data preprocessing
+## Data preprocessing
 
-1) Prepare couple mapping in `data/processed/couples_reference.json` with either real names or pseudonyms as keys, mapping to couple IDs (couple1/couple2/couple3):
-
-
-2) Run preprocessing to generate `data/processed/output.csv` and `output.parq`:
+1. Create `data/processed/couples_reference.json` with a mapping of message author → couple ID (`couple1`/`couple2`/`couple3`) and gender (`male`/`female`).
+2. Run the preprocessing pipeline:
 
 ```sh
 python src/myPreprocess.py
 ```
 
-Visualizations
+This writes `output.csv` and `output.parq`, which the figure scripts consume.
 
-Generate all seven visualization types with a single command:
+## Generating the figures
+
+Render the entire gallery in one go:
 
 ```sh
 python src/myFigures.py
 ```
 
-This creates:
+Key visuals include:
 
-1) **Semicircular gauge charts** (`img/comparing_categories_1.png`)
-   - One gauge per couple showing messaging dominance
-   - Pink for women, dark blue for men
+1. **Messaging dominance gauges** (`img/comparing_categories_1.png`)
+   - Semicircular gauges per couple showing who sends more messages.
 
-2) **Character count distribution** (`img/distribution_categories.png`)
-   - Horizontal diverging bars showing message length patterns
-   - Men (left, blue) vs Women (right, pink)
-   - Individual character count bins from 0-149+
+2. **Weekly cadence comparison** (`img/distribution_categories_1.png`)
+   - Side-by-side bars showing each gender’s share of messages per weekday.
 
-3) **Hour-of-day distribution** (`img/distribution_categories_2.png`)
-   - Similar diverging bar format but showing messaging by hour (0-23h)
-   - Reveals daily communication patterns by gender
+3. **Hourly curve – “Who texts when?”** (`img/distribution_categories_2.png`)
+   - Smoothed, normalised curves shifted to a 02:00–24:00 window.
+   - Annotated with horizontal guides: **Men rule the day** (blue) and **Women rule the night** (pink).
 
-4) **Three-column timeline** (`img/comparing_categories_2.png`)
-   - 100% stacked distributions per couple by quarter
-   - Shows relative gender balance over time
+4. **Couple share bar chart** (`img/distribution_categories_4.png`)
+   - Weekday vs weekend messaging split by gender.
 
-5) **Time series: Men vs Women child words** (`img/time_series.png`)
-   - Tracks mentions of child/family-related words over time
-   - Smooth interpolated lines with reference dates for baby births/conceptions
+5. **Weekend flip slope chart** (`img/distribution_categories_5.png`)
+   - Two-point slope showing how gender dominance changes from weekdays to weekends.
 
-6) **Time series: With/Without children** (`img/time_series_2.png`)
-   - Compares child word usage between couples with and without children
-   - Averaged data showing different communication patterns
+6. **Quarterly gender timeline** (`img/comparing_categories_2.png`)
+   - 100% stacked bars per quarter highlighting shifts inside each couple.
 
-7) **Combined time series** (`img/time_series_3.png`)
-   - Overall trend of family-related word usage across all couples
-   - Purple line showing combined patterns
+7. **Child-talk focus series** (`img/time_series.png`)
+   - Men vs women usage of family-related words with annotated milestones.
 
-Notes and conventions
+8. **With vs without children** (`img/time_series_2.png`)
+   - Comparing couples who have children to those who do not.
 
-**Data Processing:**
-- Gender is inferred via mapping in preprocessing; unknowns default to "unknown"
-- Media messages (`<Media omitted>`) are filtered out from character count analysis
-- Time series analysis uses quarter-based grouping for temporal patterns
+9. **Combined family-word trend** (`img/time_series_3.png`)
+   - Aggregated signal across all couples.
 
-**Visual Design:**
-- Consistent color scheme: Pink (#FF69B4) for women/females, Dark blue (#1E3A8A) for men/males
-- All charts use "Men vs Women" labeling for consistency
-- Distribution charts use diverging horizontal bars with percentage-based widths
-- Time series charts include smooth interpolation and reference lines for key family events
+## Notes and conventions
 
-**Child/Family Word Analysis:**
-- Tracks 22+ family-related terms: baby, child, kids, pregnant, birth, parenting, etc.
-- Includes baby-related vocabulary: diaper, stroller, crib, playground, bedtime
-- Reference lines mark important dates (baby births and conceptions) when available
+- Media messages (`<Media omitted>`) are removed before analysis.
+- Colour palette: men = `#1E3A8A`, women = `#FF69B4`; highlight annotations reuse these tones.
+- Hourly curves rely on periodic cubic splines to keep transitions smooth across midnight.
+- Family word tracking covers 20+ tokens (baby, child, daycare, stroller, etc.) and flags key life events via vertical markers.
 
-**Chart Specifications:**
-- Character distribution: Individual bins 0-149+ characters, 1.5% x-axis range
-- Hour distribution: 24-hour bins (0-23h), 8% x-axis range for better visibility
-- Time series: Quarter-based with smooth spline interpolation
+## Troubleshooting
 
-Troubleshooting
+- **Missing processed data** → run `python src/myPreprocess.py` first.
+- **Import errors** → confirm `.venv` is activated and dependencies installed.
+- **`tomllib` missing** → ensure Python ≥ 3.11 (project targets 3.12).
+- **Large files** → PyArrow is used for Parquet; install system dependencies if required.
 
-**Common Issues:**
-- **Module import errors**: Ensure your virtual environment is active and dependencies are installed
-- **Missing output.csv**: Run the preprocessing step first with `python src/myPreprocess.py`
-- **tomllib errors**: The project requires Python 3.12+, which includes tomllib. Verify with `python --version`
-- **scipy import errors**: Install scipy with `pip install scipy` or `uv add scipy`
-
-**Performance Notes:**
-- Chart generation typically takes 10-30 seconds depending on data size
-- Time series charts with smooth interpolation are most computation-intensive
-- Large datasets may require increased memory for character/hour distribution analysis
-
-**Data Quality:**
-- Ensure couples_reference.json contains all message authors
-- Check that WhatsApp export format matches expected structure
-- Verify date formats are properly parsed (preprocessing will show warnings)
+Chart generation typically finishes in under a minute; time series plots dominate runtime because of smoothing and aggregation.
