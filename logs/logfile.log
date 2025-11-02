@@ -1,459 +1,335 @@
-2025-09-16 18:54:33.059 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 18:54:33.060 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 18:54:33.060 | ERROR    | wa_analyzer.preprocess:main:90 - File data/raw/data/raw/_chat.txt not found
-2025-09-16 18:54:47.837 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 18:54:47.838 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 18:59:41.276 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 18:59:41.276 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 19:01:39.631 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:02:55.262 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:02:55.263 | INFO     | wa_analyzer.preprocess:main:74 - Using iOS regexes
-2025-09-16 19:03:26.301 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:03:26.301 | INFO     | wa_analyzer.preprocess:main:74 - Using iOS regexes
-2025-09-16 19:03:42.624 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:03:42.624 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 19:05:47.844 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:05:47.845 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 19:08:32.385 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:08:32.386 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 19:11:40.987 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:11:40.987 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 19:20:15.582 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:20:46.426 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:21:18.749 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:21:35.870 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:22:34.292 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:22:34.299 | INFO     | __main__:main:19 -                   timestamp                             message  ...                author has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  ...          jesting-duck      True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  ...          jesting-duck      True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉  ...  translucent-dinosaur      True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!  ...          foamy-jackal     False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  ...          jesting-duck     False
-
-[5 rows x 5 columns]
-2025-09-16 19:22:34.303 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 19:22:52.458 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:22:52.464 | INFO     | __main__:main:19 -                   timestamp                             message  ...                author has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  ...          jesting-duck      True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  ...          jesting-duck      True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉  ...  translucent-dinosaur      True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!  ...          foamy-jackal     False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  ...          jesting-duck     False
-
-[5 rows x 5 columns]
-2025-09-16 19:22:52.466 | INFO     | wa_analyzer.preprocess:main:80 - Using Android regexes
-2025-09-16 19:23:16.837 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:23:42.157 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:23:42.164 | INFO     | __main__:main:19 -                   timestamp                             message  ...                author has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  ...          jesting-duck      True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  ...          jesting-duck      True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉  ...  translucent-dinosaur      True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!  ...          foamy-jackal     False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  ...          jesting-duck     False
-
-[5 rows x 5 columns]
-2025-09-16 19:23:42.167 | INFO     | wa_analyzer.preprocess:main:83 - Using Android regexes
-2025-09-16 19:23:42.168 | INFO     | wa_analyzer.preprocess:process:68 - Found 0 records
-2025-09-16 19:23:42.168 | INFO     | wa_analyzer.preprocess:process:69 - Appended 0 records
-2025-09-16 19:23:42.168 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-192342.csv
-2025-09-16 19:23:42.170 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:26:13.402 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:26:13.409 | INFO     | __main__:main:18 -                   timestamp                             message  ...                author has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  ...          jesting-duck      True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  ...          jesting-duck      True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉  ...  translucent-dinosaur      True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!  ...          foamy-jackal     False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  ...          jesting-duck     False
-
-[5 rows x 5 columns]
-2025-09-16 19:26:13.411 | INFO     | wa_analyzer.preprocess:main:83 - Using Android regexes
-2025-09-16 19:26:13.412 | INFO     | wa_analyzer.preprocess:process:68 - Found 0 records
-2025-09-16 19:26:13.412 | INFO     | wa_analyzer.preprocess:process:69 - Appended 0 records
-2025-09-16 19:26:13.412 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-192613.csv
-2025-09-16 19:26:13.413 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:26:22.876 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:26:22.882 | INFO     | __main__:main:18 -                   timestamp                             message  ...                author has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  ...          jesting-duck      True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  ...          jesting-duck      True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉  ...  translucent-dinosaur      True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!  ...          foamy-jackal     False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  ...          jesting-duck     False
-
-[5 rows x 5 columns]
-2025-09-16 19:26:22.884 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:26:22.894 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:26:22.894 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:26:22.895 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-192622.csv
-2025-09-16 19:26:22.900 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:33:46.300 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:33:46.306 | INFO     | __main__:main:18 -                   timestamp                             message  ...                author has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  ...          jesting-duck      True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  ...          jesting-duck      True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉  ...  translucent-dinosaur      True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!  ...          foamy-jackal     False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  ...          jesting-duck     False
-
-[5 rows x 5 columns]
-2025-09-16 19:33:46.309 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:33:46.318 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:33:46.319 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:33:46.319 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-193346.csv
-2025-09-16 19:33:46.324 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:33:46.333 | SUCCESS  | __main__:main:42 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-193346.csv
-2025-09-16 19:36:03.893 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:36:03.900 | INFO     | __main__:main:18 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:36:03.902 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:36:03.912 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:36:03.912 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:36:03.913 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-193603.csv
-2025-09-16 19:36:03.917 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:36:03.926 | SUCCESS  | __main__:main:42 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-193603.csv
-2025-09-16 19:36:38.035 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:36:51.839 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:36:51.846 | INFO     | __main__:main:19 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:36:51.848 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:36:51.858 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:36:51.858 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:36:51.859 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-193651.csv
-2025-09-16 19:36:51.863 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:36:51.872 | SUCCESS  | __main__:main:43 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-193651.csv
-2025-09-16 19:37:52.413 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:37:52.419 | INFO     | __main__:main:19 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:37:52.421 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:37:52.431 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:37:52.431 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:37:52.432 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-193752.csv
-2025-09-16 19:37:52.436 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:37:52.445 | SUCCESS  | __main__:main:41 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-193752.csv
-2025-09-16 19:40:02.198 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:40:02.204 | INFO     | __main__:main:19 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:40:02.206 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:40:02.216 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:40:02.216 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:40:02.217 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-194002.csv
-2025-09-16 19:40:02.221 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:40:02.233 | SUCCESS  | __main__:main:64 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-194002.csv
-2025-09-16 19:41:14.808 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:41:14.814 | INFO     | __main__:main:19 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:41:14.816 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:41:14.826 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:41:14.826 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:41:14.827 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-194114.csv
-2025-09-16 19:41:14.832 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:41:14.841 | INFO     | __main__:main:62 - Normalized author names; 0 changes applied
-2025-09-16 19:41:14.843 | SUCCESS  | __main__:main:67 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-194114.csv
-2025-09-16 19:42:22.054 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:42:22.061 | INFO     | __main__:main:21 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:42:22.063 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:42:22.072 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:42:22.073 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:42:22.074 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-194222.csv
-2025-09-16 19:42:22.078 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:42:22.091 | INFO     | __main__:main:90 - Pseudonymized author names; 2565 changes applied
-2025-09-16 19:42:22.094 | SUCCESS  | __main__:main:100 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-194222.csv
-2025-09-16 19:43:45.745 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:43:45.751 | INFO     | __main__:main:22 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:43:45.753 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:43:45.763 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:43:45.763 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:43:45.764 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-194345.csv
-2025-09-16 19:43:45.769 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:43:45.781 | INFO     | __main__:main:91 - Pseudonymized author names; 2565 changes applied
-2025-09-16 19:43:45.781 | INFO     | __main__:main:105 - Applied anon_reference overrides for 2565 authors
-2025-09-16 19:43:45.784 | SUCCESS  | __main__:main:115 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-194345.csv
-2025-09-16 19:45:34.017 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:45:34.023 | INFO     | __main__:main:22 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:45:34.025 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:45:34.035 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:45:34.035 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:45:34.036 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-194534.csv
-2025-09-16 19:45:34.040 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:45:34.053 | INFO     | __main__:main:91 - Pseudonymized author names; 2565 changes applied
-2025-09-16 19:45:34.053 | INFO     | __main__:main:105 - Applied anon_reference overrides for 2565 authors
-2025-09-16 19:45:34.056 | SUCCESS  | __main__:main:115 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-194534.csv
-2025-09-16 19:46:14.036 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:46:14.043 | INFO     | __main__:main:22 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:46:14.044 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:46:14.055 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:46:14.055 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:46:14.056 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-194614.csv
-2025-09-16 19:46:14.060 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:46:14.072 | INFO     | __main__:main:91 - Pseudonymized author names; 2565 changes applied
-2025-09-16 19:46:14.073 | INFO     | __main__:main:105 - Applied anon_reference overrides for 2565 authors
-2025-09-16 19:46:14.076 | SUCCESS  | __main__:main:110 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-194614.csv
-2025-09-16 19:50:19.528 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:50:19.534 | INFO     | __main__:main:22 -                   timestamp                             message    author_orig                author  has_emoji
-0 2022-02-17 13:15:00+00:00   Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1 2022-02-17 13:15:00+00:00   Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2 2022-02-17 13:28:00+00:00                         Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-3 2022-02-17 13:35:00+00:00  Thank you guys! 🥰🥰 so many wishes!            Fei          foamy-jackal      False
-4 2022-02-17 13:48:00+00:00     And good luck tomorrow!!!!! 🤞🤞🤞  Ramunė Meacci          jesting-duck      False
-2025-09-16 19:50:19.536 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:50:19.546 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:50:19.546 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:50:19.547 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-195019.csv
-2025-09-16 19:50:19.551 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:50:19.564 | INFO     | __main__:main:91 - Pseudonymized author names; 2565 changes applied
-2025-09-16 19:50:19.564 | INFO     | __main__:main:105 - Applied anon_reference overrides for 2565 authors
-2025-09-16 19:50:19.568 | SUCCESS  | __main__:main:125 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-195019.csv
-2025-09-16 19:55:27.247 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:55:27.249 | INFO     | __main__:main:20 -                    timestamp                            message    author_orig                author  has_emoji
-0  2022-02-17 13:15:00+00:00  Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1  2022-02-17 13:15:00+00:00  Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2  2022-02-17 13:28:00+00:00                        Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-2025-09-16 19:55:27.251 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:55:27.261 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:55:27.261 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:55:27.262 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-195527.csv
-2025-09-16 19:55:27.266 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:55:27.273 | INFO     | __main__:main:52 - Applied direct anon_reference mapping
-2025-09-16 19:55:27.276 | SUCCESS  | __main__:main:71 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-195527.csv
-2025-09-16 19:57:57.358 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:57:57.359 | INFO     | __main__:main:20 -                    timestamp                            message    author_orig                author  has_emoji
-0  2022-02-17 13:15:00+00:00  Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1  2022-02-17 13:15:00+00:00  Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2  2022-02-17 13:28:00+00:00                        Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-2025-09-16 19:57:57.361 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:57:57.371 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:57:57.371 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:57:57.372 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-195757.csv
-2025-09-16 19:57:57.376 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:57:57.383 | INFO     | __main__:main:70 - Applied direct anon_reference mapping
-2025-09-16 19:57:57.388 | SUCCESS  | __main__:main:91 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-195757.csv
-2025-09-16 19:59:50.499 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 19:59:50.501 | INFO     | __main__:main:20 -                    timestamp                            message    author_orig                author  has_emoji
-0  2022-02-17 13:15:00+00:00  Wohoo Birthday boy @⁨Fei⁩  🎉🎉🎉🎉🎉🎉  Ramunė Meacci          jesting-duck       True
-1  2022-02-17 13:15:00+00:00  Many wishes!!! From all of us🤗😘😘🎊  Ramunė Meacci          jesting-duck       True
-2  2022-02-17 13:28:00+00:00                        Auguri 🎂🎂🎉🎉       Ludovica  translucent-dinosaur       True
-2025-09-16 19:59:50.502 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 19:59:50.512 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 19:59:50.512 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 19:59:50.513 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-195950.csv
-2025-09-16 19:59:50.517 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 19:59:50.525 | INFO     | __main__:main:70 - Applied direct anon_reference mapping
-2025-09-16 19:59:50.542 | SUCCESS  | __main__:main:95 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-195950.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-195950.parq
-2025-09-16 20:01:01.476 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:01:01.477 | WARNING  | __main__:main:16 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:01:01.477 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:01:01.487 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:01:01.487 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:01:01.488 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-200101.csv
-2025-09-16 20:01:01.493 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:01:01.516 | SUCCESS  | __main__:main:95 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-200101.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-200101.parq
-2025-09-16 20:05:30.372 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:05:30.372 | WARNING  | __main__:main:16 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:05:30.373 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:05:30.382 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:05:30.382 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:05:30.384 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-200530.csv
-2025-09-16 20:05:30.388 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:05:30.410 | SUCCESS  | __main__:main:99 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:08:17.069 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:08:17.070 | WARNING  | __main__:main:16 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:08:17.070 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:08:17.080 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:08:17.080 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:08:17.081 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-200817.csv
-2025-09-16 20:08:17.085 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:08:17.109 | SUCCESS  | __main__:main:99 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:09:17.246 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:09:17.246 | WARNING  | __main__:main:19 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:09:17.247 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:09:17.256 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:09:17.256 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:09:17.258 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-200917.csv
-2025-09-16 20:09:17.263 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:09:17.271 | INFO     | __main__:main:76 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-16 20:09:17.272 | WARNING  | __main__:main:119 - anon_reference.json not found; skipping author anonymization
-2025-09-16 20:09:17.289 | INFO     | __main__:main:159 - Removed 3 intermediate whatsapp-*.csv file(s)
-2025-09-16 20:09:17.289 | SUCCESS  | __main__:main:161 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:10:26.871 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:10:26.872 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:10:26.872 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:10:26.882 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:10:26.882 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:10:26.883 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-201026.csv
-2025-09-16 20:10:26.888 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:10:26.896 | INFO     | __main__:main:77 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-16 20:10:26.896 | WARNING  | __main__:main:118 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-16 20:10:26.898 | INFO     | __main__:main:142 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-16 20:10:26.915 | INFO     | __main__:main:182 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-16 20:10:26.915 | SUCCESS  | __main__:main:184 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:11:40.086 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:11:40.087 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:11:40.087 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:11:40.096 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:11:40.097 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:11:40.098 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-201140.csv
-2025-09-16 20:11:40.102 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:11:40.110 | INFO     | __main__:main:80 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-16 20:11:40.110 | WARNING  | __main__:main:121 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-16 20:11:40.112 | INFO     | __main__:main:145 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-16 20:11:40.129 | INFO     | __main__:main:216 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-16 20:11:40.129 | SUCCESS  | __main__:main:218 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:11:48.495 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:11:48.496 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:11:48.496 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:11:48.506 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:11:48.506 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:11:48.507 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-201148.csv
-2025-09-16 20:11:48.511 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:11:48.519 | INFO     | __main__:main:80 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-16 20:11:48.519 | WARNING  | __main__:main:121 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-16 20:11:48.521 | INFO     | __main__:main:145 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-16 20:11:48.538 | INFO     | __main__:main:216 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-16 20:11:48.538 | SUCCESS  | __main__:main:218 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:12:13.295 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:12:13.295 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:12:13.295 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:12:13.305 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:12:13.305 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:12:13.306 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-201213.csv
-2025-09-16 20:12:13.311 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:12:13.318 | INFO     | __main__:main:80 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-16 20:12:13.319 | WARNING  | __main__:main:121 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-16 20:12:13.321 | INFO     | __main__:main:145 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-16 20:12:13.342 | INFO     | __main__:main:221 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-16 20:12:13.342 | SUCCESS  | __main__:main:223 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:13:02.199 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:13:02.200 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:13:02.200 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:13:02.209 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:13:02.209 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:13:02.211 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-201302.csv
-2025-09-16 20:13:02.215 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:13:02.222 | INFO     | __main__:main:80 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-16 20:13:02.223 | WARNING  | __main__:main:121 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-16 20:13:02.225 | INFO     | __main__:main:145 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-16 20:13:02.247 | INFO     | __main__:main:221 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-16 20:13:02.247 | SUCCESS  | __main__:main:223 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:15:16.611 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:15:16.611 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:15:16.611 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:15:16.621 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:15:16.621 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:15:16.622 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-201516.csv
-2025-09-16 20:15:16.627 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:15:16.635 | INFO     | __main__:main:80 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-16 20:15:16.635 | WARNING  | __main__:main:121 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-16 20:15:16.637 | INFO     | __main__:main:145 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-16 20:15:16.638 | INFO     | __main__:main:166 - Applied couples mapping using author_orig (matched 2565)
-2025-09-16 20:15:16.659 | INFO     | __main__:main:221 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-16 20:15:16.659 | SUCCESS  | __main__:main:223 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-16 20:16:16.681 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-16 20:16:16.681 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-16 20:16:16.682 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-16 20:16:16.691 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-16 20:16:16.691 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-16 20:16:16.692 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250916-201616.csv
-2025-09-16 20:16:16.697 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-16 20:16:16.704 | INFO     | __main__:main:80 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-16 20:16:16.704 | WARNING  | __main__:main:121 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-16 20:16:16.707 | INFO     | __main__:main:145 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-16 20:16:16.707 | INFO     | __main__:main:166 - Applied couples mapping using author_orig (matched 2565)
-2025-09-16 20:16:16.728 | INFO     | __main__:main:208 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-16 20:16:16.728 | SUCCESS  | __main__:main:210 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-21 09:52:03.985 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-21 09:52:03.985 | WARNING  | __main__:main:16 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-21 09:52:03.986 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-21 09:52:03.997 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-21 09:52:03.997 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-21 09:52:03.998 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250921-095203.csv
-2025-09-21 09:52:04.003 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-21 09:52:04.012 | INFO     | __main__:main:87 - Applied couples_reference.json (matched 2565 rows)
-2025-09-21 09:52:04.106 | SUCCESS  | __main__:main:112 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-21 09:52:48.683 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-21 09:52:48.684 | WARNING  | __main__:main:16 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-21 09:52:48.684 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-21 09:52:48.694 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-21 09:52:48.694 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-21 09:52:48.695 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250921-095248.csv
-2025-09-21 09:52:48.699 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-21 09:52:48.707 | INFO     | __main__:main:87 - Applied couples_reference.json (matched 2565 rows)
-2025-09-21 09:52:48.722 | SUCCESS  | __main__:main:112 - Cleaned messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-21 09:54:40.581 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-21 09:54:40.581 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/data/processed/whatsapp-20250916-170413.csv does not exist. Please check the path in config.toml.
-2025-09-21 09:54:40.582 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-21 09:54:40.592 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-21 09:54:40.592 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-21 09:54:40.595 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250921-095440.csv
-2025-09-21 09:54:40.601 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-21 09:54:40.614 | INFO     | __main__:main:88 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-21 09:54:40.614 | WARNING  | __main__:main:129 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-21 09:54:40.616 | INFO     | __main__:main:153 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-21 09:54:40.617 | INFO     | __main__:main:174 - Applied couples mapping using author_orig (matched 2565)
-2025-09-21 09:54:40.655 | INFO     | __main__:main:216 - Removed 3 intermediate whatsapp-*.csv file(s)
-2025-09-21 09:54:40.655 | SUCCESS  | __main__:main:218 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-21 10:28:05.392 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-21 10:28:05.393 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
-2025-09-21 10:28:05.393 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-21 10:28:05.404 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-21 10:28:05.404 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-21 10:28:05.406 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250921-102805.csv
-2025-09-21 10:28:05.412 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-21 10:28:05.416 | INFO     | __main__:main:60 - Added gender column: {'male': 1285, 'female': 1280, 'unknown': 3}
-2025-09-21 10:28:05.425 | INFO     | __main__:main:104 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-21 10:28:05.425 | WARNING  | __main__:main:145 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-21 10:28:05.428 | INFO     | __main__:main:169 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-21 10:28:05.429 | INFO     | __main__:main:190 - Applied couples mapping using author_orig (matched 2565)
-2025-09-21 10:28:05.468 | INFO     | __main__:main:232 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-21 10:28:05.468 | SUCCESS  | __main__:main:234 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
-2025-09-23 18:27:15.654 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
-2025-09-23 18:27:15.655 | WARNING  | myPreprocess:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
-2025-09-23 18:27:15.655 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
-2025-09-23 18:27:15.664 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
-2025-09-23 18:27:15.665 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
-2025-09-23 18:27:15.667 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20250923-182715.csv
-2025-09-23 18:27:15.673 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
-2025-09-23 18:27:15.678 | INFO     | myPreprocess:main:56 - Added gender column: {'male': 1285, 'female': 1280, 'unknown': 3}
-2025-09-23 18:27:15.686 | INFO     | myPreprocess:main:91 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
-2025-09-23 18:27:15.687 | WARNING  | myPreprocess:main:131 - anon_reference.json not found; applying fallback pseudonymization
-2025-09-23 18:27:15.689 | INFO     | myPreprocess:main:155 - Fallback pseudonymization produced 7 unique pseudonyms
-2025-09-23 18:27:15.690 | INFO     | myPreprocess:main:170 - Applied couples mapping using author_orig (matched 2565)
-2025-09-23 18:27:15.769 | INFO     | myPreprocess:main:208 - Removed 1 intermediate whatsapp-*.csv file(s)
-2025-09-23 18:27:15.769 | SUCCESS  | myPreprocess:main:210 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-27 11:44:51.886 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-27 11:44:51.887 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-27 11:44:51.887 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-27 11:44:51.898 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
+2025-10-27 11:44:51.898 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
+2025-10-27 11:44:51.900 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251027-114451.csv
+2025-10-27 11:44:51.906 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-27 11:44:51.920 | INFO     | __main__:main:79 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-27 11:44:51.920 | WARNING  | __main__:main:119 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-27 11:44:51.922 | INFO     | __main__:main:143 - Fallback pseudonymization produced 7 unique pseudonyms
+2025-10-27 11:44:51.923 | INFO     | __main__:main:178 - Applied couples mapping using author_orig (matched 2565)
+2025-10-27 11:44:51.924 | INFO     | __main__:main:216 - Applied gender mapping using author_orig (matched 2565)
+2025-10-27 11:44:51.924 | INFO     | __main__:main:228 - Gender distribution: {'male': 1285, 'female': 1280, 'unknown': 3}
+2025-10-27 11:44:51.965 | INFO     | __main__:main:255 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-27 11:44:51.965 | SUCCESS  | __main__:main:257 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-27 14:18:12.530 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-27 14:18:12.530 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-27 14:18:12.531 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-27 14:18:12.542 | INFO     | wa_analyzer.preprocess:process:68 - Found 2568 records
+2025-10-27 14:18:12.542 | INFO     | wa_analyzer.preprocess:process:69 - Appended 105 records
+2025-10-27 14:18:12.544 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251027-141812.csv
+2025-10-27 14:18:12.549 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-27 14:18:12.555 | INFO     | __main__:main:60 - Added gender column: {'male': 1285, 'female': 1280, 'unknown': 3}
+2025-10-27 14:18:12.563 | INFO     | __main__:main:101 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-27 14:18:12.563 | WARNING  | __main__:main:142 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-27 14:18:12.566 | INFO     | __main__:main:166 - Fallback pseudonymization produced 7 unique pseudonyms
+2025-10-27 14:18:12.567 | INFO     | __main__:main:187 - Applied couples mapping using author_orig (matched 2565)
+2025-10-27 14:18:12.593 | WARNING  | __main__:main:210 - Could not write parquet file: ("Expected bytes, got a 'dict' object", 'Conversion failed for column couples with type object')
+2025-10-27 14:18:12.599 | INFO     | __main__:main:229 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-27 14:18:12.599 | SUCCESS  | __main__:main:231 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 17:19:13.398 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 17:19:13.398 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 17:19:13.399 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 17:19:13.399 | INFO     | wa_analyzer.preprocess:process:68 - Found 0 records
+2025-10-28 17:19:13.399 | INFO     | wa_analyzer.preprocess:process:69 - Appended 0 records
+2025-10-28 17:19:13.401 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-171913.csv
+2025-10-28 17:19:13.402 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 17:19:13.404 | INFO     | __main__:main:60 - Added gender column: {}
+2025-10-28 17:19:13.406 | INFO     | __main__:main:101 - Unique authors BEFORE mapping (0): []
+2025-10-28 17:19:13.406 | WARNING  | __main__:main:142 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 17:19:13.406 | INFO     | __main__:main:166 - Fallback pseudonymization produced 0 unique pseudonyms
+2025-10-28 17:19:13.407 | WARNING  | __main__:main:192 - couples_reference.json present but no names matched; leaving as single
+2025-10-28 17:19:13.435 | INFO     | __main__:main:229 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 17:19:13.435 | SUCCESS  | __main__:main:231 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 17:21:26.533 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 17:21:26.533 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 17:21:26.534 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 17:21:26.545 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 17:21:26.545 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 17:21:26.547 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-172126.csv
+2025-10-28 17:21:26.555 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 17:21:26.561 | INFO     | __main__:main:60 - Added gender column: {'female': 1310, 'male': 993, 'unknown': 325}
+2025-10-28 17:21:26.571 | INFO     | __main__:main:101 - Unique authors BEFORE mapping (8): ['+31 6 49666835', 'Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 17:21:26.571 | WARNING  | __main__:main:142 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 17:21:26.573 | INFO     | __main__:main:166 - Fallback pseudonymization produced 8 unique pseudonyms
+2025-10-28 17:21:26.575 | INFO     | __main__:main:187 - Applied couples mapping using author_orig (matched 2303)
+2025-10-28 17:21:26.604 | WARNING  | __main__:main:210 - Could not write parquet file: ("Expected bytes, got a 'dict' object", 'Conversion failed for column couples with type object')
+2025-10-28 17:21:26.611 | INFO     | __main__:main:229 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 17:21:26.611 | SUCCESS  | __main__:main:231 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 17:21:33.412 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 17:21:33.413 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 17:21:33.413 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 17:21:33.424 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 17:21:33.424 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 17:21:33.425 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-172133.csv
+2025-10-28 17:21:33.431 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 17:21:33.435 | INFO     | __main__:main:60 - Added gender column: {'female': 1310, 'male': 993, 'unknown': 325}
+2025-10-28 17:21:33.445 | INFO     | __main__:main:101 - Unique authors BEFORE mapping (8): ['+31 6 49666835', 'Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 17:21:33.445 | WARNING  | __main__:main:142 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 17:21:33.448 | INFO     | __main__:main:166 - Fallback pseudonymization produced 8 unique pseudonyms
+2025-10-28 17:21:33.449 | INFO     | __main__:main:187 - Applied couples mapping using author_orig (matched 2303)
+2025-10-28 17:21:33.468 | WARNING  | __main__:main:210 - Could not write parquet file: ("Expected bytes, got a 'dict' object", 'Conversion failed for column couples with type object')
+2025-10-28 17:21:33.474 | INFO     | __main__:main:229 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 17:21:33.474 | SUCCESS  | __main__:main:231 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 17:27:45.085 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 17:27:45.086 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 17:27:45.087 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 17:27:45.098 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 17:27:45.098 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 17:27:45.102 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-172745.csv
+2025-10-28 17:27:45.109 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 17:27:45.117 | INFO     | __main__:main:60 - Added gender column: {'female': 1310, 'male': 993, 'unknown': 325}
+2025-10-28 17:27:45.126 | INFO     | __main__:main:101 - Unique authors BEFORE mapping (8): ['+31 6 49666835', 'Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 17:27:45.126 | WARNING  | __main__:main:142 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 17:27:45.129 | INFO     | __main__:main:166 - Fallback pseudonymization produced 8 unique pseudonyms
+2025-10-28 17:27:45.130 | INFO     | __main__:main:187 - Applied couples mapping using author_orig (matched 2303)
+2025-10-28 17:27:45.160 | WARNING  | __main__:main:210 - Could not write parquet file: ("Expected bytes, got a 'dict' object", 'Conversion failed for column couples with type object')
+2025-10-28 17:27:45.167 | INFO     | __main__:main:229 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 17:27:45.167 | SUCCESS  | __main__:main:231 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 17:27:56.143 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 17:27:56.143 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 17:27:56.144 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 17:27:56.157 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 17:27:56.157 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 17:27:56.159 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-172756.csv
+2025-10-28 17:27:56.166 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 17:27:56.172 | INFO     | __main__:main:60 - Added gender column: {'female': 1310, 'male': 993, 'unknown': 325}
+2025-10-28 17:27:56.184 | INFO     | __main__:main:101 - Unique authors BEFORE mapping (8): ['+31 6 49666835', 'Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 17:27:56.184 | WARNING  | __main__:main:142 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 17:27:56.188 | INFO     | __main__:main:166 - Fallback pseudonymization produced 8 unique pseudonyms
+2025-10-28 17:27:56.189 | INFO     | __main__:main:187 - Applied couples mapping using author_orig (matched 2303)
+2025-10-28 17:27:56.216 | WARNING  | __main__:main:210 - Could not write parquet file: ("Expected bytes, got a 'dict' object", 'Conversion failed for column couples with type object')
+2025-10-28 17:27:56.225 | INFO     | __main__:main:229 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 17:27:56.225 | SUCCESS  | __main__:main:231 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 17:28:25.454 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 17:28:25.454 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 17:28:25.455 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 17:28:25.473 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 17:28:25.473 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 17:28:25.475 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-172825.csv
+2025-10-28 17:28:25.480 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 17:28:25.485 | INFO     | __main__:main:60 - Added gender column: {'female': 1310, 'male': 993, 'unknown': 325}
+2025-10-28 17:28:25.495 | INFO     | __main__:main:101 - Unique authors BEFORE mapping (8): ['+31 6 49666835', 'Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 17:28:25.495 | WARNING  | __main__:main:142 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 17:28:25.498 | INFO     | __main__:main:166 - Fallback pseudonymization produced 8 unique pseudonyms
+2025-10-28 17:28:25.499 | INFO     | __main__:main:188 - Applied couples mapping using author_orig (matched 2303)
+2025-10-28 17:28:25.540 | INFO     | __main__:main:251 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 17:28:25.540 | SUCCESS  | __main__:main:253 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 17:32:23.157 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 17:32:23.157 | WARNING  | __main__:main:20 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 17:32:23.158 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 17:32:23.169 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 17:32:23.169 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 17:32:23.171 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-173223.csv
+2025-10-28 17:32:23.177 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 17:32:23.185 | INFO     | __main__:main:60 - Added gender column: {'female': 1310, 'male': 993, 'unknown': 325}
+2025-10-28 17:32:23.207 | INFO     | __main__:main:101 - Unique authors BEFORE mapping (8): ['+31 6 49666835', 'Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 17:32:23.207 | WARNING  | __main__:main:142 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 17:32:23.211 | INFO     | __main__:main:166 - Fallback pseudonymization produced 8 unique pseudonyms
+2025-10-28 17:32:23.214 | INFO     | __main__:main:188 - Applied couples mapping using author_orig (matched 2303)
+2025-10-28 17:32:23.230 | INFO     | __main__:main:267 - Wrote couples/gender mapping for 8 pseudonyms -> /Users/floridomeacci/Documents/hu-florido-v2/data/processed/couples_gender_mapping.json
+2025-10-28 17:32:23.297 | INFO     | __main__:main:298 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 17:32:23.297 | SUCCESS  | __main__:main:300 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 18:40:34.811 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 18:40:34.812 | WARNING  | __main__:main:136 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 18:40:34.812 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 18:40:34.826 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 18:40:34.826 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 18:40:34.828 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-184034.csv
+2025-10-28 18:40:34.834 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 18:40:34.845 | INFO     | __main__:main:188 - Added gender column: {'female': 1310, 'male': 993, 'unknown': 325}
+2025-10-28 18:40:34.853 | INFO     | __main__:main:229 - Unique authors BEFORE mapping (8): ['+31 6 49666835', 'Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 18:40:34.854 | WARNING  | __main__:main:270 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 18:40:34.856 | INFO     | __main__:main:294 - Fallback pseudonymization produced 8 unique pseudonyms
+2025-10-28 18:40:34.858 | INFO     | __main__:main:316 - Applied couples mapping using author_orig (matched 2303)
+2025-10-28 18:40:34.935 | INFO     | __main__:main:381 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 18:40:34.935 | SUCCESS  | __main__:main:383 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 18:40:41.834 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 18:40:41.834 | WARNING  | __main__:main:136 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 18:40:41.835 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 18:40:41.846 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 18:40:41.846 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 18:40:41.847 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-184041.csv
+2025-10-28 18:40:41.852 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 18:40:41.861 | INFO     | __main__:main:188 - Added gender column: {'female': 1310, 'male': 993, 'unknown': 325}
+2025-10-28 18:40:41.869 | INFO     | __main__:main:229 - Unique authors BEFORE mapping (8): ['+31 6 49666835', 'Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 18:40:41.870 | WARNING  | __main__:main:270 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 18:40:41.872 | INFO     | __main__:main:294 - Fallback pseudonymization produced 8 unique pseudonyms
+2025-10-28 18:40:41.873 | INFO     | __main__:main:316 - Applied couples mapping using author_orig (matched 2303)
+2025-10-28 18:40:41.900 | INFO     | __main__:main:381 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 18:40:41.900 | SUCCESS  | __main__:main:383 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-10-28 18:46:40.683 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-10-28 18:46:40.684 | WARNING  | __main__:main:136 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-10-28 18:46:40.684 | INFO     | wa_analyzer.preprocess:main:80 - Using old version regexes
+2025-10-28 18:46:40.711 | INFO     | wa_analyzer.preprocess:process:68 - Found 2628 records
+2025-10-28 18:46:40.711 | INFO     | wa_analyzer.preprocess:process:69 - Appended 108 records
+2025-10-28 18:46:40.714 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251028-184640.csv
+2025-10-28 18:46:40.724 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-10-28 18:46:40.742 | INFO     | __main__:main:188 - Added gender column: {'male': 1314, 'female': 1310, 'unknown': 4}
+2025-10-28 18:46:40.761 | INFO     | __main__:main:229 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-10-28 18:46:40.762 | WARNING  | __main__:main:270 - anon_reference.json not found; applying fallback pseudonymization
+2025-10-28 18:46:40.766 | INFO     | __main__:main:294 - Fallback pseudonymization produced 7 unique pseudonyms
+2025-10-28 18:46:40.822 | INFO     | __main__:main:381 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-10-28 18:46:40.822 | SUCCESS  | __main__:main:383 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-11-02 09:25:08.404 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-11-02 09:25:09.144 | INFO     | __main__:main:34 - ============================================================
+2025-11-02 09:25:09.144 | INFO     | __main__:main:35 - STARTING KEY FIGURES GENERATION PIPELINE
+2025-11-02 09:25:09.144 | INFO     | __main__:main:36 - ============================================================
+2025-11-02 09:25:09.144 | INFO     | __main__:main:39 - 
+📊 Step 1: Running preprocessing...
+2025-11-02 09:25:09.145 | WARNING  | myPreprocess:main:136 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-11-02 09:25:09.145 | INFO     | wa_analyzer.preprocess:main:77 - Using old version regexes
+2025-11-02 09:25:09.157 | INFO     | wa_analyzer.preprocess:process:65 - Found 2628 records
+2025-11-02 09:25:09.157 | INFO     | wa_analyzer.preprocess:process:66 - Appended 108 records
+2025-11-02 09:25:09.160 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251102-092509.csv
+2025-11-02 09:25:09.169 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-11-02 09:25:09.181 | INFO     | myPreprocess:main:188 - Added gender column: {'male': 1314, 'female': 1310, 'unknown': 4}
+2025-11-02 09:25:09.191 | INFO     | myPreprocess:main:229 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-11-02 09:25:09.191 | WARNING  | myPreprocess:main:270 - anon_reference.json not found; applying fallback pseudonymization
+2025-11-02 09:25:09.194 | INFO     | myPreprocess:main:294 - Fallback pseudonymization produced 7 unique pseudonyms
+2025-11-02 09:25:09.254 | INFO     | myPreprocess:main:381 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-11-02 09:25:09.254 | SUCCESS  | myPreprocess:main:383 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-11-02 09:25:09.254 | SUCCESS  | __main__:main:42 - ✅ Preprocessing completed successfully
+2025-11-02 09:25:09.254 | INFO     | __main__:main:48 - 
+📊 Step 2: Loading processed data...
+2025-11-02 09:25:09.309 | SUCCESS  | __main__:main:52 - ✅ Loaded 2628 messages
+2025-11-02 09:25:09.309 | INFO     | __main__:main:58 - 
+📊 Step 3: Generating visualizations...
+2025-11-02 09:25:09.309 | INFO     | __main__:main:71 -   Generating relationship_4: Friends respond more if you use emoji's...
+2025-11-02 09:25:10.002 | SUCCESS  | __main__:main:73 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/relationship_4.png
+2025-11-02 09:25:10.002 | INFO     | __main__:main:71 -   Generating time_series_18: Time series analysis...
+2025-11-02 09:25:10.995 | SUCCESS  | __main__:main:73 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/time_series_18.png
+2025-11-02 09:25:10.995 | INFO     | __main__:main:71 -   Generating distribution_categories_2: Who texts when?...
+2025-11-02 09:25:11.193 | SUCCESS  | __main__:main:73 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_categories_2.png
+2025-11-02 09:25:11.193 | INFO     | __main__:main:71 -   Generating comparing_categories_2: Category comparison...
+2025-11-02 09:25:11.479 | SUCCESS  | __main__:main:73 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/comparing_categories_2.png
+2025-11-02 09:25:11.479 | INFO     | __main__:main:81 - 
+📊 Step 4: Checking for additional figures...
+2025-11-02 09:25:11.479 | INFO     | __main__:main:84 -   Found existing: /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_response_times.png
+2025-11-02 09:25:11.479 | INFO     | __main__:main:91 - 
+============================================================
+2025-11-02 09:25:11.479 | SUCCESS  | __main__:main:92 - COMPLETED: Generated 5 figures
+2025-11-02 09:25:11.479 | INFO     | __main__:main:93 - ============================================================
+2025-11-02 09:25:11.479 | INFO     | __main__:main:94 - 
+Generated files:
+2025-11-02 09:25:11.479 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/relationship_4.png
+2025-11-02 09:25:11.479 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/time_series_18.png
+2025-11-02 09:25:11.480 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_categories_2.png
+2025-11-02 09:25:11.480 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/comparing_categories_2.png
+2025-11-02 09:25:11.480 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_response_times.png
+2025-11-02 09:25:48.725 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-11-02 09:25:49.343 | INFO     | __main__:main:34 - ============================================================
+2025-11-02 09:25:49.343 | INFO     | __main__:main:35 - STARTING KEY FIGURES GENERATION PIPELINE
+2025-11-02 09:25:49.343 | INFO     | __main__:main:36 - ============================================================
+2025-11-02 09:25:49.343 | INFO     | __main__:main:39 - 
+📊 Step 1: Running preprocessing...
+2025-11-02 09:25:49.343 | WARNING  | myPreprocess:main:136 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-11-02 09:25:49.344 | INFO     | wa_analyzer.preprocess:main:77 - Using old version regexes
+2025-11-02 09:25:49.354 | INFO     | wa_analyzer.preprocess:process:65 - Found 2628 records
+2025-11-02 09:25:49.354 | INFO     | wa_analyzer.preprocess:process:66 - Appended 108 records
+2025-11-02 09:25:49.356 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251102-092549.csv
+2025-11-02 09:25:49.361 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-11-02 09:25:49.370 | INFO     | myPreprocess:main:188 - Added gender column: {'male': 1314, 'female': 1310, 'unknown': 4}
+2025-11-02 09:25:49.378 | INFO     | myPreprocess:main:229 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-11-02 09:25:49.378 | WARNING  | myPreprocess:main:270 - anon_reference.json not found; applying fallback pseudonymization
+2025-11-02 09:25:49.380 | INFO     | myPreprocess:main:294 - Fallback pseudonymization produced 7 unique pseudonyms
+2025-11-02 09:25:49.427 | INFO     | myPreprocess:main:381 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-11-02 09:25:49.427 | SUCCESS  | myPreprocess:main:383 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-11-02 09:25:49.427 | SUCCESS  | __main__:main:42 - ✅ Preprocessing completed successfully
+2025-11-02 09:25:49.427 | INFO     | __main__:main:48 - 
+📊 Step 2: Loading processed data...
+2025-11-02 09:25:49.467 | SUCCESS  | __main__:main:52 - ✅ Loaded 2628 messages
+2025-11-02 09:25:49.467 | INFO     | __main__:main:58 - 
+📊 Step 3: Generating visualizations...
+2025-11-02 09:25:49.467 | INFO     | __main__:main:71 -   Generating relationship_4: Friends respond more if you use emoji's...
+2025-11-02 09:25:50.112 | SUCCESS  | __main__:main:73 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/relationship_4.png
+2025-11-02 09:25:50.112 | INFO     | __main__:main:71 -   Generating time_series_18: Time series analysis...
+2025-11-02 09:25:51.026 | SUCCESS  | __main__:main:73 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/time_series_18.png
+2025-11-02 09:25:51.026 | INFO     | __main__:main:71 -   Generating distribution_categories_2: Who texts when?...
+2025-11-02 09:25:51.218 | SUCCESS  | __main__:main:73 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_categories_2.png
+2025-11-02 09:25:51.219 | INFO     | __main__:main:71 -   Generating comparing_categories_2: Category comparison...
+2025-11-02 09:25:51.497 | SUCCESS  | __main__:main:73 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/comparing_categories_2.png
+2025-11-02 09:25:51.497 | INFO     | __main__:main:81 - 
+📊 Step 4: Checking for additional figures...
+2025-11-02 09:25:51.497 | WARNING  | __main__:main:87 -   ⚠️  distribution_response_times.png not found
+2025-11-02 09:25:51.497 | WARNING  | __main__:main:88 -      This figure may need to be generated separately
+2025-11-02 09:25:51.497 | INFO     | __main__:main:91 - 
+============================================================
+2025-11-02 09:25:51.497 | SUCCESS  | __main__:main:92 - COMPLETED: Generated 4 figures
+2025-11-02 09:25:51.497 | INFO     | __main__:main:93 - ============================================================
+2025-11-02 09:25:51.497 | INFO     | __main__:main:94 - 
+Generated files:
+2025-11-02 09:25:51.497 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/relationship_4.png
+2025-11-02 09:25:51.497 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/time_series_18.png
+2025-11-02 09:25:51.497 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_categories_2.png
+2025-11-02 09:25:51.497 | INFO     | __main__:main:96 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/comparing_categories_2.png
+2025-11-02 09:28:45.162 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/Documents/hu-florido-v2', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-11-02 09:28:45.864 | INFO     | __main__:main:35 - ============================================================
+2025-11-02 09:28:45.864 | INFO     | __main__:main:36 - STARTING KEY FIGURES GENERATION PIPELINE
+2025-11-02 09:28:45.864 | INFO     | __main__:main:37 - ============================================================
+2025-11-02 09:28:45.864 | INFO     | __main__:main:40 - 
+📊 Step 1: Running preprocessing...
+2025-11-02 09:28:45.864 | WARNING  | myPreprocess:main:136 - /Users/floridomeacci/Documents/hu-florido-v2/output.csv does not exist. Please check the path in config.toml.
+2025-11-02 09:28:45.865 | INFO     | wa_analyzer.preprocess:main:77 - Using old version regexes
+2025-11-02 09:28:45.875 | INFO     | wa_analyzer.preprocess:process:65 - Found 2628 records
+2025-11-02 09:28:45.875 | INFO     | wa_analyzer.preprocess:process:66 - Appended 108 records
+2025-11-02 09:28:45.877 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251102-092845.csv
+2025-11-02 09:28:45.882 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-11-02 09:28:45.892 | INFO     | myPreprocess:main:188 - Added gender column: {'male': 1314, 'female': 1310, 'unknown': 4}
+2025-11-02 09:28:45.900 | INFO     | myPreprocess:main:229 - Unique authors BEFORE mapping (7): ['Alberto Doncato', 'Fei', 'Florido Meacci', 'Ludovica', 'Ramunė Meacci', 'Shuyan', 'Unknown']
+2025-11-02 09:28:45.900 | WARNING  | myPreprocess:main:270 - anon_reference.json not found; applying fallback pseudonymization
+2025-11-02 09:28:45.902 | INFO     | myPreprocess:main:294 - Fallback pseudonymization produced 7 unique pseudonyms
+2025-11-02 09:28:45.950 | INFO     | myPreprocess:main:381 - Removed 1 intermediate whatsapp-*.csv file(s)
+2025-11-02 09:28:45.950 | SUCCESS  | myPreprocess:main:383 - Cleaned & anonymized messages written to /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.csv and /Users/floridomeacci/Documents/hu-florido-v2/data/processed/output.parq
+2025-11-02 09:28:45.951 | SUCCESS  | __main__:main:43 - ✅ Preprocessing completed successfully
+2025-11-02 09:28:45.951 | INFO     | __main__:main:49 - 
+📊 Step 2: Loading processed data...
+2025-11-02 09:28:45.991 | SUCCESS  | __main__:main:53 - ✅ Loaded 2628 messages
+2025-11-02 09:28:45.991 | INFO     | __main__:main:59 - 
+📊 Step 3: Generating visualizations...
+2025-11-02 09:28:45.991 | INFO     | __main__:main:73 -   Generating distribution_response_times: Men reply quicker on average...
+2025-11-02 09:28:46.372 | SUCCESS  | __main__:main:75 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_response_times.png
+2025-11-02 09:28:46.372 | INFO     | __main__:main:73 -   Generating relationship_4: Friends respond more if you use emoji's...
+2025-11-02 09:28:46.937 | SUCCESS  | __main__:main:75 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/relationship_4.png
+2025-11-02 09:28:46.937 | INFO     | __main__:main:73 -   Generating time_series_18: Time series analysis...
+2025-11-02 09:28:47.947 | SUCCESS  | __main__:main:75 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/time_series_18.png
+2025-11-02 09:28:47.947 | INFO     | __main__:main:73 -   Generating distribution_categories_2: Who texts when?...
+2025-11-02 09:28:48.152 | SUCCESS  | __main__:main:75 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_categories_2.png
+2025-11-02 09:28:48.152 | INFO     | __main__:main:73 -   Generating comparing_categories_2: Category comparison...
+2025-11-02 09:28:48.467 | SUCCESS  | __main__:main:75 -   ✅ Generated: /Users/floridomeacci/Documents/hu-florido-v2/img/comparing_categories_2.png
+2025-11-02 09:28:48.467 | INFO     | __main__:main:83 - 
+============================================================
+2025-11-02 09:28:48.467 | SUCCESS  | __main__:main:84 - COMPLETED: Generated 5 figures
+2025-11-02 09:28:48.467 | INFO     | __main__:main:85 - ============================================================
+2025-11-02 09:28:48.467 | INFO     | __main__:main:86 - 
+Generated files:
+2025-11-02 09:28:48.467 | INFO     | __main__:main:88 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_response_times.png
+2025-11-02 09:28:48.467 | INFO     | __main__:main:88 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/relationship_4.png
+2025-11-02 09:28:48.467 | INFO     | __main__:main:88 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/time_series_18.png
+2025-11-02 09:28:48.467 | INFO     | __main__:main:88 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/distribution_categories_2.png
+2025-11-02 09:28:48.467 | INFO     | __main__:main:88 -   📈 /Users/floridomeacci/Documents/hu-florido-v2/img/comparing_categories_2.png
+2025-11-02 11:04:05.906 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-11-02 11:04:05.908 | INFO     | wa_analyzer.preprocess:main:77 - Using old version regexes
+2025-11-02 11:04:05.919 | INFO     | wa_analyzer.preprocess:process:65 - Found 2628 records
+2025-11-02 11:04:05.919 | INFO     | wa_analyzer.preprocess:process:66 - Appended 108 records
+2025-11-02 11:04:05.921 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251102-110405.csv
+2025-11-02 11:04:05.926 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-11-02 11:05:52.125 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-11-02 11:05:52.125 | INFO     | wa_analyzer.preprocess:main:77 - Using old version regexes
+2025-11-02 11:05:52.136 | INFO     | wa_analyzer.preprocess:process:65 - Found 2628 records
+2025-11-02 11:05:52.136 | INFO     | wa_analyzer.preprocess:process:66 - Appended 108 records
+2025-11-02 11:05:52.138 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251102-110552.csv
+2025-11-02 11:05:52.143 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-11-02 11:08:09.610 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-11-02 11:08:09.611 | INFO     | wa_analyzer.preprocess:main:77 - Using old version regexes
+2025-11-02 11:08:09.622 | INFO     | wa_analyzer.preprocess:process:65 - Found 2628 records
+2025-11-02 11:08:09.622 | INFO     | wa_analyzer.preprocess:process:66 - Appended 108 records
+2025-11-02 11:08:09.623 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251102-110809.csv
+2025-11-02 11:08:09.628 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!
+2025-11-02 11:10:01.669 | DEBUG    | wa_analyzer.preprocess:<module>:18 - Python path: ['/Users/floridomeacci/Documents/hu-florido-v2/src', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python312.zip', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12', '/Users/floridomeacci/.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/lib-dynload', '/Users/floridomeacci/Documents/hu-florido-v2/.venv/lib/python3.12/site-packages']
+2025-11-02 11:10:01.670 | INFO     | wa_analyzer.preprocess:main:77 - Using old version regexes
+2025-11-02 11:10:01.680 | INFO     | wa_analyzer.preprocess:process:65 - Found 2628 records
+2025-11-02 11:10:01.680 | INFO     | wa_analyzer.preprocess:process:66 - Appended 108 records
+2025-11-02 11:10:01.682 | INFO     | wa_analyzer.preprocess:save:34 - Writing to data/processed/whatsapp-20251102-111001.csv
+2025-11-02 11:10:01.687 | SUCCESS  | wa_analyzer.preprocess:save:36 - Done!

@@ -1,143 +1,144 @@
-# hu-florido-v2
+# HU Florido V2
 
-WhatsApp analytics focused on three anonymised couples. The pipeline ingests an exported chat log, enriches it with couple and gender metadata, and renders a gallery of publication-ready plots that surface who talks most, when conversations happen, and how family-related topics evolve over time.
+WhatsApp chat analysis project generating 5 key visualizations from message data.
 
-## Overview
+## 🎯 Overview
 
-- Cleans and normalises WhatsApp exports (CSV or Parquet)
-- Maps real names or pseudonyms to couples and genders
-- Produces nine figures covering dominance, timing, and topic trends
-- Highlights notable behaviours such as “Men rule the day” vs “Women rule the night” messaging peaks
+This project analyzes WhatsApp chat data to reveal communication patterns across couples and genders. The analysis is fully automated and configuration-driven using Pydantic models.
 
-## Project structure
+## 📊 Generated Figures
 
-```
-.
-├── config.toml
-├── data/
-│   ├── processed/
-│   │   ├── couples_reference.json
-│   │   ├── output.csv
-│   │   └── output.parq
-│   └── raw/
-├── img/
-│   ├── comparing_categories_1.png
-│   ├── comparing_categories_2.png
-│   ├── distribution_categories_1.png
-│   ├── distribution_categories_2.png
-│   ├── distribution_categories_4.png
-│   ├── distribution_categories_5.png
-│   ├── time_series.png
-│   ├── time_series_2.png
-│   └── time_series_3.png
-├── src/
-│   ├── myFigures.py
-│   └── myPreprocess.py
-├── pyproject.toml
-└── README.md
-```
+1. **`distribution.png`** - Response time distribution comparing men vs women
+   - Shows men reply quicker on average
+   - Smoothed probability distributions with median indicators
 
-## Requirements
+2. **`relationship.png`** - Emoji usage vs response rate analysis  
+   - Proves friends respond more if you use emojis
+   - Smooth interpolation with actual data points
 
-- macOS (tested) with Python 3.12+
-- Dependencies managed via `pyproject.toml`:
-  - wa-analyzer
-  - pandas, numpy, pyarrow
-  - matplotlib, seaborn
-  - scipy (spline smoothing)
-- Optional: [uv](https://github.com/astral-sh/uv) for fast environment management
+3. **`tSNE.png`** - Text clustering visualization by couple
+   - Demonstrates each couple has their own language
+   - t-SNE dimensionality reduction with KDE contours
 
-## Setup
+4. **`time_series.png`** - Hourly messaging patterns
+   - Who texts when throughout the day
+   - Smooth time series with gender-based area fills
 
-### Option A: uv (recommended)
+5. **`comparing_categories.png`** - Quarterly dominance analysis
+   - One voice per couple always dominates WhatsApp messages over time
+   - Horizontal stacked bars showing message distribution
 
-```sh
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv venv .venv
-source .venv/bin/activate
-uv sync
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone and navigate to repository
+cd hu-florido-v2
+
+# Install dependencies (requires Python 3.12+)
+pip install -e .
 ```
 
-### Option B: venv + pip
+### Configuration
 
-```sh
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -U pip
-pip install wa-analyzer pyarrow matplotlib seaborn pandas numpy scipy
+1. Place your WhatsApp chat export in `data/raw/_chat.txt`
+2. Configure couple/gender mapping in `data/processed/couples_gender_mapping.json` (auto-created on first run)
+3. Adjust settings in `config.toml` if needed
+
+### Run Analysis
+
+```bash
+# Generate all 5 figures
+python src/generate_5_key_figures.py
 ```
 
-## Configuration
+Output images will be saved to `img/` directory.
 
-Point `config.toml` at your preferred inputs:
+## 🏗️ Architecture
 
-```toml
-processed = "data/processed"
-current = "output.parq"
-inputpath = "data/raw/whatsapp.txt"
+### Configuration-Driven Design
+
+All settings are centralized in **Pydantic models** (`src/config.py`):
+- `DataColumnConfig` - Column name mappings
+- `AnalysisConfig` - Analysis parameters (couples, gender mapping, time windows)
+- `DistributionPlotConfig` - Distribution plot settings
+- `RelationshipPlotConfig` - Emoji analysis settings
+- `TSNEPlotConfig` - t-SNE visualization parameters
+- `FigureStyleConfig` - Colors, fonts, backgrounds, grid settings
+- `FigureOutputConfig` - Output format and filenames
+- `MasterConfig` - Combines all configs
+
+### Code Structure
+
+```
+src/
+├── config.py                    # Pydantic configuration models
+└── generate_5_key_figures.py   # Main script with analyzer classes
 ```
 
-## Data preprocessing
+**Analyzer Classes** (follow Single Responsibility Principle):
+- `ResponseTimeAnalyzer` - Response time calculations
+- `EmojiResponseAnalyzer` - Emoji usage analysis
+- `TSNEAnalyzer` - Text clustering with t-SNE
+- `HourlyPatternAnalyzer` - Time-based messaging patterns
+- `QuarterlyDominanceAnalyzer` - Quarterly message statistics
+- `FigureStyle` - Consistent styling helper methods
 
-1. Create `data/processed/couples_reference.json` with a mapping of message author → couple ID (`couple1`/`couple2`/`couple3`) and gender (`male`/`female`).
-2. Run the preprocessing pipeline:
+### Data Pipeline
 
-```sh
-python src/myPreprocess.py
+1. **Preprocessing** - Parse raw chat → clean/anonymize → add gender/couple metadata
+2. **Analysis** - Each analyzer class processes data independently
+3. **Visualization** - FigureStyle applies consistent styling
+4. **Output** - Save to configured locations
+
+## 🔒 Privacy
+
+Sensitive files are excluded from git:
+- `data/raw/_chat.txt` - Your private chat data
+- `data/processed/couples_gender_mapping.json` - Real name mappings
+- All `.csv` and `.parq` files
+
+Configure `.gitignore` as needed for your privacy requirements.
+
+## 📦 Dependencies
+
+Core requirements:
+- Python 3.12+
+- pandas, numpy, matplotlib, scipy
+- scikit-learn (for t-SNE)
+- pydantic (for configuration)
+- emoji (for emoji detection)
+
+See `pyproject.toml` for complete dependency list.
+
+## 🛠️ Customization
+
+### Change Colors or Styling
+
+Edit `src/config.py` → `FigureStyleConfig`:
+```python
+gender_colors: Dict[str, str] = {
+    'Men': '#1E3A8A',      # Blue
+    'Women': '#FF69B4'     # Pink
+}
 ```
 
-This writes `output.csv` and `output.parq`, which the figure scripts consume.
+### Adjust Analysis Parameters
 
-## Generating the figures
-
-Render the entire gallery in one go:
-
-```sh
-python src/myFigures.py
+Edit `src/config.py` → `AnalysisConfig`:
+```python
+max_response_hours: float = 6.0  # Max time for valid response
+couples_list: List[str] = ["couple1", "couple2", "couple3"]
 ```
 
-Key visuals include:
+### Modify Plot Settings
 
-1. **Messaging dominance gauges** (`img/comparing_categories_1.png`)
-   - Semicircular gauges per couple showing who sends more messages.
+Each plot type has its own config section in `config.py` with parameters for bins, smoothing, colors, point sizes, etc.
 
-2. **Weekly cadence comparison** (`img/distribution_categories_1.png`)
-   - Side-by-side bars showing each gender’s share of messages per weekday.
+## 📝 Notes
 
-3. **Hourly curve – “Who texts when?”** (`img/distribution_categories_2.png`)
-   - Smoothed, normalised curves shifted to a 02:00–24:00 window.
-   - Annotated with horizontal guides: **Men rule the day** (blue) and **Women rule the night** (pink).
-
-4. **Couple share bar chart** (`img/distribution_categories_4.png`)
-   - Weekday vs weekend messaging split by gender.
-
-5. **Weekend flip slope chart** (`img/distribution_categories_5.png`)
-   - Two-point slope showing how gender dominance changes from weekdays to weekends.
-
-6. **Quarterly gender timeline** (`img/comparing_categories_2.png`)
-   - 100% stacked bars per quarter highlighting shifts inside each couple.
-
-7. **Child-talk focus series** (`img/time_series.png`)
-   - Men vs women usage of family-related words with annotated milestones.
-
-8. **With vs without children** (`img/time_series_2.png`)
-   - Comparing couples who have children to those who do not.
-
-9. **Combined family-word trend** (`img/time_series_3.png`)
-   - Aggregated signal across all couples.
-
-## Notes and conventions
-
-- Media messages (`<Media omitted>`) are removed before analysis.
-- Colour palette: men = `#1E3A8A`, women = `#FF69B4`; highlight annotations reuse these tones.
-- Hourly curves rely on periodic cubic splines to keep transitions smooth across midnight.
-- Family word tracking covers 20+ tokens (baby, child, daycare, stroller, etc.) and flags key life events via vertical markers.
-
-## Troubleshooting
-
-- **Missing processed data** → run `python src/myPreprocess.py` first.
-- **Import errors** → confirm `.venv` is activated and dependencies installed.
-- **`tomllib` missing** → ensure Python ≥ 3.11 (project targets 3.12).
-- **Large files** → PyArrow is used for Parquet; install system dependencies if required.
-
-Chart generation typically finishes in under a minute; time series plots dominate runtime because of smoothing and aggregation.
+- First run auto-creates `couples_gender_mapping.json` with default values
+- Edit the mapping file to match your actual chat participants
+- Preprocessing runs automatically before figure generation
+- All figures use consistent styling from `FigureStyleConfig`

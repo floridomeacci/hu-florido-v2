@@ -1,5 +1,17 @@
+# Virtual environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files
 *.csv
 *.txt
 *.parq
+
+# Build files
 .python-*
 uv.lock
+
+# Private mapping files (contains real names)
+data/processed/couples_gender_mapping.json
