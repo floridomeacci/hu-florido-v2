@@ -233,16 +233,38 @@ def _norm_name(value: Optional[str]) -> str:
 def _load_couples_gender_mapping(processed_dir: Path) -> Dict[str, Dict[str, Dict[str, Any]]]:
     """Load couples/gender mapping from JSON file."""
     mapping_path = processed_dir / MAPPING_FILENAME
-    if not mapping_path.exists():
-        raise FileNotFoundError(
-            (
-                f"{mapping_path} not found. Please create this JSON file with your "
-                "couples/gender mapping (see README for the required structure)."
-            )
+    if not mapping_path.exists() or mapping_path.stat().st_size == 0:
+        default_mapping = {
+            "Example Person": {
+                "gender": "unknown",
+                "couple": "single",
+                "aliases": ["example-alias"]
+            },
+            "Unknown": {
+                "gender": "unknown",
+                "couple": "single",
+                "aliases": ["unknown"]
+            }
+        }
+        mapping_path.parent.mkdir(parents=True, exist_ok=True)
+        with mapping_path.open("w", encoding="utf-8") as mp:
+            json.dump(default_mapping, mp, indent=4)
+        print(
+            f"⚠️  Created default mapping template at {mapping_path}. "
+            "Please update it with your couples and aliases before rerunning."
         )
 
-    with mapping_path.open("r", encoding="utf-8") as mp:
-        raw_mapping = json.load(mp)
+    try:
+        with mapping_path.open("r", encoding="utf-8") as mp:
+            raw_mapping = json.load(mp)
+    except json.JSONDecodeError as exc:
+        backup_path = mapping_path.with_suffix(".invalid.json")
+        mapping_path.replace(backup_path)
+        mapping_path.write_text("{}", encoding="utf-8")
+        raise ValueError(
+            f"Invalid JSON in {backup_path}. A blank template was created; "
+            "please fix the file and rerun."
+        ) from exc
 
     if not isinstance(raw_mapping, dict):
         raise ValueError("couples_gender_mapping.json must contain an object at the top level")
