@@ -40,7 +40,7 @@ class AnalysisConfig(BaseModel):
 
 class DistributionPlotConfig(BaseModel):
     """Configuration for distribution plots."""
-    num_bins: int = 100
+    bin_minutes: int = 1
     smoothing_sigma: float = 2.0
     scaling_factor: float = 10.0
     time_max_hours: float = 6.0
@@ -92,12 +92,15 @@ class FigureStyleConfig(BaseModel):
     subtitle_fontsize: int = 13
     label_fontsize: int = 14
     legend_fontsize: int = 12
+    caption_fontsize: int = 12
     
     # Background colors
     figure_bg: str = 'white'
     axis_bg: str = '#F9FAFB'
     legend_bg: str = 'white'
     legend_alpha: float = 0.95
+    caption_color: str = '#6B7280'
+    caption_line_spacing: float = 0.024
     
     # Grid settings
     grid_alpha: float = 0.25

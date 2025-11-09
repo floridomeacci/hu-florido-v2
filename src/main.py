@@ -10,11 +10,13 @@ import hashlib
 import re
 from pathlib import Path
 from typing import Optional, Dict, List, Any
+from itertools import combinations
 import tomllib
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import colors as mcolors
 from scipy.interpolate import make_interp_spline
 from scipy.ndimage import gaussian_filter1d
 import emoji
@@ -103,6 +105,35 @@ class FigureStyle:
                 ha='left',
                 va='top',
                 transform=fig.transFigure,
+            )
+
+    def add_caption(self, fig, lines: List[str] | List[tuple[str, str]], y_start: float = 0.035):
+        """Add centered italic caption lines beneath the axes."""
+        if not lines:
+            return
+
+        spacing = getattr(self.config, 'caption_line_spacing', 0.024)
+        fontsize = getattr(self.config, 'caption_fontsize', self.config.subtitle_fontsize)
+        default_color = getattr(self.config, 'caption_color', '#6B7280')
+
+        for idx, entry in enumerate(lines):
+            if isinstance(entry, tuple):
+                text, tone = entry
+                color = default_color
+            else:
+                text = entry
+                color = default_color
+            if not text:
+                continue
+            fig.text(
+                0.5,
+                y_start - idx * spacing,
+                text,
+                ha='center',
+                va='bottom',
+                fontsize=fontsize,
+                color=color,
+                style='italic'
             )
     
     def set_axis_labels(self, ax, xlabel: str = None, ylabel: str = None, fontsize: int = None):
@@ -290,14 +321,17 @@ def run_preprocessing() -> Path:
         print(f"Preprocessor failed: {e}")
         return processed_dir / "output.csv"
 
-    # Find latest whatsapp-*.csv
-    try:
-        latest_csv = max(processed_dir.glob("whatsapp-*.csv"), key=lambda p: p.stat().st_mtime)
-    except ValueError:
-        return processed_dir / "output.csv"
+    output_csv = processed_dir / "output.csv"
+    if not output_csv.exists():
+        # Backward compatibility: fall back to timestamped file if present
+        try:
+            latest_csv = max(processed_dir.glob("whatsapp-*.csv"), key=lambda p: p.stat().st_mtime)
+            output_csv = latest_csv
+        except ValueError:
+            return processed_dir / "output.csv"
 
     # Load data
-    out_df = pd.read_csv(latest_csv)
+    out_df = pd.read_csv(output_csv)
     
     # Preserve original author
     if "author" in out_df.columns and "author_orig" not in out_df.columns:
@@ -492,8 +526,8 @@ def distribution(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None
     for group, times in response_times.items():
         median = np.median(times) if times else 0
     
-    # Convert to hours
-    data_hours = {group: [t / 60 for t in times] for group, times in response_times.items()}
+    # Convert to minutes (already provided in minutes by analyzer)
+    data_minutes = response_times
     medians = {group: np.median(times) if times else 0 for group, times in response_times.items()}
     
     # Create styling helper
@@ -502,46 +536,50 @@ def distribution(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None
     # Create figure
     fig, ax = style.setup_figure(figsize=(16, 8))
     
-    # Create histograms with smoothed curves
-    bins = np.linspace(0, config.distribution.time_max_hours, config.distribution.num_bins)
-    
-    for group_name in ['Women', 'Men']:
-        if group_name in data_hours:
-            hist, bin_edges = np.histogram(data_hours[group_name], bins=bins, density=True)
-            smoothed = gaussian_filter1d(hist, sigma=config.distribution.smoothing_sigma)
-            bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
-            smoothed = smoothed * len(data_hours[group_name]) / config.distribution.scaling_factor
-            
-            ax.fill_between(
-                bin_centers, 0, smoothed,
-                alpha=1.0,
-                color=config.style.gender_colors[group_name],
-                label=group_name
-            )
-    
-    # Add median text box
-    textbox = "\n".join([f"{group} median: {med:.1f} min" for group, med in medians.items()])
-    ax.text(
-        *config.distribution.median_box_position,
-        textbox,
-        transform=ax.transAxes,
-        fontsize=14,
-        verticalalignment='top',
-        bbox=dict(boxstyle='round', facecolor='white', alpha=0.9, edgecolor='black', linewidth=2),
-        fontweight='bold'
-    )
+    # Histogram setup: bucket response times per minute within the 6 hour window
+    max_minutes = int(config.distribution.time_max_hours * 60)
+    minute_range = np.arange(max_minutes)
+    men_counts = np.zeros(max_minutes, dtype=float)
+    women_counts = np.zeros(max_minutes, dtype=float)
+
+    def add_counts(times: List[float], target_array: np.ndarray):
+        for t in times:
+            if t < 0:
+                continue
+            minute_index = int(min(max_minutes - 1, max(0, np.floor(t))))
+            target_array[minute_index] += 1
+
+    add_counts(data_minutes.get('Men', []), men_counts)
+    add_counts(data_minutes.get('Women', []), women_counts)
+
+    men_total = len(data_minutes.get('Men', []))
+    women_total = len(data_minutes.get('Women', []))
+
+    x_positions = minute_range / 60.0
+    bar_width = 1.0 / 60.0  # one minute in hours for x-axis scaling
+
+    ax.bar(x_positions, men_counts, width=bar_width, color=config.style.gender_colors['Men'], label='Men')
+    ax.bar(x_positions, women_counts, width=bar_width,
+           bottom=men_counts, color=config.style.gender_colors['Women'], label='Women')
     
     # Labels and formatting
-    style.set_axis_labels(ax, xlabel='Time', ylabel='Responses')
+    style.set_axis_labels(ax, xlabel='Time', ylabel='Responses (count)')
     ax.set_xlim(0, config.distribution.time_max_hours)
     ax.set_xticks(range(int(config.distribution.time_max_hours) + 1))
     ax.set_xticklabels(config.distribution.time_labels)
+    ax.set_ylim(bottom=0)
     
-    style.add_title(fig, 'Men reply quicker on average')
+    style.add_title(fig, 'Women reply quicker on average')
     style.add_legend(ax, legend_type='gender')
     style.style_axis(ax)
-    
-    plt.tight_layout(rect=[0, 0, 1, 0.92])
+
+    plt.tight_layout(rect=[0, 0.05, 1, 0.92])
+
+    subtitle_text = (
+        f"Replies — Men: {men_total}, Women: {women_total} | "
+        f"Median response (min) — Men: {medians.get('Men', 0):.1f}, Women: {medians.get('Women', 0):.1f}"
+    )
+    style.add_caption(fig, [subtitle_text])
     
     output_path = output_dir / config.output.distribution_filename
     plt.savefig(output_path, dpi=config.output.dpi, bbox_inches=config.output.bbox_inches,
@@ -655,35 +693,73 @@ def relationship(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None
         combined_rates.append(combined_rate)
         sample_sizes.append(total_msgs)
     
-    # Create smooth interpolation
-    x_smooth = np.linspace(0, len(x_positions) - 1, config.relationship.smooth_points)
-    spl = make_interp_spline(x_positions, combined_rates, k=config.relationship.spline_degree)
-    y_smooth = spl(x_smooth)
-    y_smooth = np.clip(y_smooth, 0, 100)
-    
-    # Plot filled curve in pink
-    ax.fill_between(x_smooth, 0, y_smooth, alpha=1.0, color=config.style.gender_colors['Women'], label='Response Rate')
-    ax.plot(x_smooth, y_smooth, linewidth=4, color=config.style.gender_colors['Women'], alpha=1.0)
+    y_axis_min, y_axis_max = 10, 30
+
+    # Plot rigid line through actual points (no smoothing)
+    x_dense = np.linspace(x_positions[0], x_positions[-1], num=400)
+    y_dense = np.interp(x_dense, x_positions, combined_rates)
+
+    fill_color = config.style.gender_colors['Men']
+    point_color = fill_color
+
+    ax.fill_between(
+        x_dense,
+        y_dense,
+        0,
+        alpha=1.0,
+        color=fill_color,
+        zorder=2
+    )
+    ax.plot(
+        x_positions,
+        combined_rates,
+        linewidth=3,
+        color=fill_color,
+        alpha=1.0,
+        zorder=3
+    )
     
     # Add actual data points in blue
-    ax.scatter(x_positions, combined_rates, s=config.relationship.point_size, 
-              color=config.style.gender_colors['Men'], edgecolors='white', linewidths=config.relationship.point_edge_width, 
-              zorder=5, label='Actual Data')
+    ax.scatter(
+        x_positions,
+        combined_rates,
+        s=config.relationship.point_size,
+        color=point_color,
+        edgecolors='white',
+        linewidths=config.relationship.point_edge_width,
+        zorder=5
+    )
     
     # Add percentage labels on data points
     for i, (pos, rate, size) in enumerate(zip(x_positions, combined_rates, sample_sizes)):
-        ax.text(pos, rate + 4, f'{rate:.1f}%', ha='center', va='bottom', 
-                fontweight='bold', fontsize=12, color=config.style.gender_colors['Men'])
-        ax.text(pos, -8, f'n={size}', ha='center', va='top', 
-                fontsize=9, color='#666666', style='italic')
+        label_y = min(max(rate + 1.2, y_axis_min + 1), y_axis_max - 1.5)
+        ax.text(
+            pos,
+            label_y,
+            f'{rate:.1f}%',
+            ha='center',
+            va='bottom',
+            fontweight='bold',
+            fontsize=12,
+            color=point_color
+        )
+        ax.text(
+            pos,
+            y_axis_min - 0.8,
+            f'n={size}',
+            ha='center',
+            va='top',
+            fontsize=9,
+            color='#666666',
+            style='italic'
+        )
     
     # Labels and formatting
     style.set_axis_labels(ax, xlabel='Number of Emojis in Message', ylabel='Response Rate (%)', fontsize=16)
     ax.set_xticks(x_positions)
     ax.set_xticklabels(x_labels, fontsize=13)
-    ax.set_ylim(-10, 105)
+    ax.set_ylim(y_axis_min, y_axis_max)
     
-    style.add_legend(ax, legend_type='gender')
     style.style_axis(ax)
     style.add_title(fig, "Friends respond more\nif you use emoji's", y_pos=0.93)
     
@@ -900,33 +976,95 @@ def tSNE(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None) -> Pat
         print(f"    ❌ {e}")
         return None
 
+    # Compute centroid distances between couples in t-SNE space
+    couples = sorted(couple_meta['couples'].unique())
+
+    distance_parts: List[str] = []
+    cross_distance_parts: List[str] = []
+    couple_centroids: Dict[str, np.ndarray] = {}
+    for couple in couples:
+        subset = couple_meta[couple_meta['couples'] == couple]
+        label = couple.replace('couple', 'Couple ')
+
+        # Attempt to split by author and compute within-couple distances
+        if 'author' in subset.columns and subset['author'].nunique() >= 2:
+            author_centroids = subset.groupby('author')[['pca_x', 'pca_y']].mean()
+            if len(author_centroids) >= 2:
+                # Choose first two authors (assumes couple pair)
+                first_two = author_centroids.index[:2]
+                dist = np.linalg.norm(author_centroids.loc[first_two[0]] - author_centroids.loc[first_two[1]])
+                distance_parts.append(f"{label}: {dist:.1f}")
+                couple_centroids[couple] = author_centroids.iloc[:2].mean().to_numpy()
+                continue
+
+        # Fallback to average distance between points with author info
+        if len(subset) >= 2:
+            coords = subset[['pca_x', 'pca_y']].to_numpy()
+            distances = np.sqrt(((coords[:, None, :] - coords[None, :, :]) ** 2).sum(axis=2))
+            upper = distances[np.triu_indices_from(distances, k=1)]
+            if upper.size > 0:
+                mean_dist = float(np.mean(upper))
+                distance_parts.append(f"{label}: {mean_dist:.1f}")
+                couple_centroids[couple] = coords.mean(axis=0)
+        elif len(subset) == 1:
+            couple_centroids[couple] = subset[['pca_x', 'pca_y']].to_numpy().squeeze()
+
+    for c1, c2 in combinations(couple_centroids.keys(), 2):
+        dist = float(np.linalg.norm(couple_centroids[c1] - couple_centroids[c2]))
+        label_a = c1.replace('couple', 'Couple ')
+        label_b = c2.replace('couple', 'Couple ')
+        cross_distance_parts.append(f"{label_a}–{label_b}: {dist:.1f}")
+
+    within_text = (
+        "Within-couple t-SNE distance — " + " | ".join(distance_parts)
+        if distance_parts else "Within-couple distances unavailable"
+    )
+    cross_text = (
+        "Cross-couple t-SNE distance — " + " | ".join(cross_distance_parts)
+        if cross_distance_parts else "Cross-couple distances unavailable"
+    )
+
     # Create styling helper
     style = FigureStyle(config.style)
 
     # Create visualization
     fig, ax = style.setup_figure(figsize=(14, 10))
 
+    def _blend_color(base_hex: str, mix_hex: str, ratio: float) -> str:
+        base_rgb = np.array(mcolors.to_rgb(base_hex))
+        mix_rgb = np.array(mcolors.to_rgb(mix_hex))
+        mixed = base_rgb * (1.0 - ratio) + mix_rgb * ratio
+        return mcolors.to_hex(np.clip(mixed, 0.0, 1.0))
+
+    def _author_variants(base_hex: str, count: int) -> List[str]:
+        return [base_hex] * max(1, count)
+
     # Plot couples with density contours
-    couples = sorted(couple_meta['couples'].unique())
     for couple in couples:
         subset = couple_meta[couple_meta['couples'] == couple]
-        color = config.style.couple_colors.get(couple, '#6B7280')
+        base_color = config.style.couple_colors.get(couple, '#6B7280')
         
         # Format couple label
         couple_num = couple.replace('couple', 'Couple ')
         
-        # Scatter plot
-        ax.scatter(
-            subset['pca_x'],
-            subset['pca_y'],
-            c=color,
-            s=120,
-            alpha=0.7,
-            edgecolors='white',
-            linewidth=1.5,
-            label=couple_num,
-            zorder=3,
-        )
+        unique_authors = [a for a in sorted(subset['author'].dropna().unique().tolist())]
+        if not unique_authors:
+            unique_authors = [None]
+        author_palette = _author_variants(base_color, len(unique_authors))
+        author_color_map = dict(zip(unique_authors, author_palette))
+
+        for author in unique_authors:
+            author_points = subset if author is None else subset[subset['author'] == author]
+            ax.scatter(
+                author_points['pca_x'],
+                author_points['pca_y'],
+                c=author_color_map.get(author, base_color),
+                s=120,
+                alpha=0.75,
+                edgecolors='white',
+                linewidth=1.4,
+                zorder=3,
+            )
         
         # Add KDE contours if enough points
         if len(subset) > 3:
@@ -936,7 +1074,7 @@ def tSNE(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None) -> Pat
                     x=subset['pca_x'],
                     y=subset['pca_y'],
                     ax=ax,
-                    color=color,
+                    color=base_color,
                     alpha=config.tsne.kde_alpha,
                     levels=config.tsne.kde_levels,
                     fill=True,
@@ -951,7 +1089,8 @@ def tSNE(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None) -> Pat
     style.add_legend(ax, legend_type='couples')
     style.add_title(fig, 'Each couple has their own language', y_pos=0.97)
 
-    fig.tight_layout(rect=[0, 0, 1, 0.90])
+    fig.tight_layout(rect=[0, 0.07, 1, 0.90])
+    style.add_caption(fig, [within_text, cross_text], y_start=0.045)
 
     output_path = output_dir / config.output.tsne_filename
     plt.savefig(output_path, dpi=config.output.dpi, bbox_inches=config.output.bbox_inches,

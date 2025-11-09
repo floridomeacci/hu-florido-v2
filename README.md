@@ -1,6 +1,6 @@
 # HU Florido V2
 
-WhatsApp chat analysis project generating 5 key visualizations from message data.
+WhatsApp chat analysis project generating five key visualizations from message data.
 
 ## 🎯 Overview
 
@@ -8,25 +8,15 @@ This project analyzes WhatsApp chat data to reveal communication patterns across
 
 ## 📊 Generated Figures
 
-1. **`distribution.png`** - Response time distribution comparing men vs women
-   - Shows men reply quicker on average
-   - Smoothed probability distributions with median indicators
+1. **`distribution.png`** – Reply speed histogram (minute resolution) split by gender. Stacked bars show raw reply counts, medians are reported in the caption, and the title underlines that women respond quicker on average.
 
-2. **`relationship.png`** - Emoji usage vs response rate analysis  
-   - Proves friends respond more if you use emojis
-   - Smooth interpolation with actual data points
+2. **`relationship.png`** – Emoji usage versus response rate. A rigid curve with a solid fill tracks the actual bucketed response rates (zoomed to the 10–30% window) and `n=` counts sit directly beneath each bucket.
 
-3. **`tSNE.png`** - Text clustering visualization by couple
-   - Demonstrates each couple has their own language
-   - t-SNE dimensionality reduction with KDE contours
+3. **`tSNE.png`** – Text clustering per couple. Each couple keeps a single base color for both points and density clouds, with caption lines summarizing within-couple and cross-couple t-SNE distances.
 
-4. **`time_series.png`** - Hourly messaging patterns
-   - Who texts when throughout the day
-   - Smooth time series with gender-based area fills
+4. **`time_series.png`** – Hourly messaging patterns that reveal who texts when throughout the day via gender-based area fills.
 
-5. **`comparing_categories.png`** - Quarterly dominance analysis
-   - One voice per couple always dominates WhatsApp messages over time
-   - Horizontal stacked bars showing message distribution
+5. **`comparing_categories.png`** – Quarterly dominance view showing which voice leads each period using stacked horizontal bars.
 
 ## 🚀 Quick Start
 
@@ -49,8 +39,8 @@ pip install -e .
 ### Run Analysis
 
 ```bash
-# Generate all 5 figures
-python src/generate_5_key_figures.py
+# Generate preprocessing + all five figures
+python src/main.py
 ```
 
 Output images will be saved to `img/` directory.
@@ -74,7 +64,7 @@ All settings are centralized in **Pydantic models** (`src/config.py`):
 ```
 src/
 ├── config.py                    # Pydantic configuration models
-└── generate_5_key_figures.py   # Main script with analyzer classes
+└── main.py                     # Main script with analyzers and figure generation
 ```
 
 **Analyzer Classes** (follow Single Responsibility Principle):
@@ -83,7 +73,7 @@ src/
 - `TSNEAnalyzer` - Text clustering with t-SNE
 - `HourlyPatternAnalyzer` - Time-based messaging patterns
 - `QuarterlyDominanceAnalyzer` - Quarterly message statistics
-- `FigureStyle` - Consistent styling helper methods
+- `FigureStyle` - Consistent styling helper methods (titles, legends, captions)
 
 ### Data Pipeline
 
