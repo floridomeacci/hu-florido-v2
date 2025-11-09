@@ -39,49 +39,7 @@ from config import (
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CONFIG_FILE = REPO_ROOT / "config.toml"
-
-DEFAULT_COUPLES_GENDER_MAPPING: Dict[str, Dict[str, Any]] = {
-    "Fei": {
-        "gender": "male",
-        "couple": "couple1",
-        "aliases": ["spry-jaguar"],
-    },
-    "Shuyan": {
-        "gender": "female",
-        "couple": "couple1",
-        "aliases": ["brisk-falcon"],
-    },
-    "Ramunė Meacci": {
-        "gender": "female",
-        "couple": "couple2",
-        "aliases": ["tidy-zebra"],
-    },
-    "Florido Meacci": {
-        "gender": "male",
-        "couple": "couple2",
-        "aliases": ["odd-jaguar"],
-    },
-    "Alberto Doncato": {
-        "gender": "male",
-        "couple": "couple3",
-        "aliases": ["young-dolphin"],
-    },
-    "Albert Doncato": {
-        "gender": "male",
-        "couple": "couple3",
-        "aliases": ["young-dolphin"],
-    },
-    "Ludovica": {
-        "gender": "female",
-        "couple": "couple3",
-        "aliases": ["nimble-ibis"],
-    },
-    "Unknown": {
-        "gender": "unknown",
-        "couple": "single",
-        "aliases": ["unknown"],
-    },
-}
+MAPPING_FILENAME = "couples_gender_mapping.json"
 
 # Legacy constants - kept for backward compatibility
 COUPLES = DEFAULT_CONFIG.analysis.couples_list
@@ -243,11 +201,14 @@ def _norm_name(value: Optional[str]) -> str:
 
 def _load_couples_gender_mapping(processed_dir: Path) -> Dict[str, Dict[str, Dict[str, Any]]]:
     """Load couples/gender mapping from JSON file."""
-    mapping_path = processed_dir / "couples_gender_mapping.json"
+    mapping_path = processed_dir / MAPPING_FILENAME
     if not mapping_path.exists():
-        mapping_path.parent.mkdir(parents=True, exist_ok=True)
-        with mapping_path.open("w", encoding="utf-8") as mp:
-            json.dump(DEFAULT_COUPLES_GENDER_MAPPING, mp, ensure_ascii=False, indent=2)
+        raise FileNotFoundError(
+            (
+                f"{mapping_path} not found. Please create this JSON file with your "
+                "couples/gender mapping (see README for the required structure)."
+            )
+        )
 
     with mapping_path.open("r", encoding="utf-8") as mp:
         raw_mapping = json.load(mp)
