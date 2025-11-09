@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 """
 Standalone script to run preprocessing and generate 5 key figures.
-All dependencies are self-contained - does not import from other project files.
 """
 
-import sys
 import json
 import hashlib
 import re
@@ -16,22 +14,14 @@ import tomllib
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import colors as mcolors
 from scipy.interpolate import make_interp_spline
-from scipy.ndimage import gaussian_filter1d
 import emoji
 
 # Import configuration models
 from config import (
     MasterConfig,
     DEFAULT_CONFIG,
-    DataColumnConfig,
-    AnalysisConfig,
-    DistributionPlotConfig,
-    RelationshipPlotConfig,
-    TSNEPlotConfig,
-    FigureStyleConfig,
-    FigureOutputConfig,
+    FigureStyleConfig
 )
 
 
@@ -101,13 +91,13 @@ class FigureStyle:
                 subtitle_y,
                 subtitle,
                 fontsize=self.config.subtitle_fontsize,
-                color='#6B7280',
+                color=getattr(self.config, 'subtitle_color', '#6B7280'),
                 ha='left',
                 va='top',
                 transform=fig.transFigure,
             )
 
-    def add_caption(self, fig, lines: List[str] | List[tuple[str, str]], y_start: float = 0.035):
+    def add_caption(self, fig, lines: List[str], y_start: float = 0.035):
         """Add centered italic caption lines beneath the axes."""
         if not lines:
             return
@@ -116,13 +106,7 @@ class FigureStyle:
         fontsize = getattr(self.config, 'caption_fontsize', self.config.subtitle_fontsize)
         default_color = getattr(self.config, 'caption_color', '#6B7280')
 
-        for idx, entry in enumerate(lines):
-            if isinstance(entry, tuple):
-                text, tone = entry
-                color = default_color
-            else:
-                text = entry
-                color = default_color
+        for idx, text in enumerate(lines):
             if not text:
                 continue
             fig.text(
@@ -132,7 +116,7 @@ class FigureStyle:
                 ha='center',
                 va='bottom',
                 fontsize=fontsize,
-                color=color,
+                color=default_color,
                 style='italic'
             )
     
@@ -544,12 +528,6 @@ def distribution(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None
     prepared_data = analyzer.prepare_data(df)
     response_times = analyzer.calculate_response_times(prepared_data)
     
-    # Log results
-    for group, times in response_times.items():
-        median = np.median(times) if times else 0
-    
-    # Convert to minutes (already provided in minutes by analyzer)
-    data_minutes = response_times
     medians = {group: np.median(times) if times else 0 for group, times in response_times.items()}
     
     # Create styling helper
@@ -571,11 +549,11 @@ def distribution(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None
             minute_index = int(min(max_minutes - 1, max(0, np.floor(t))))
             target_array[minute_index] += 1
 
-    add_counts(data_minutes.get('Men', []), men_counts)
-    add_counts(data_minutes.get('Women', []), women_counts)
+    add_counts(response_times.get('Men', []), men_counts)
+    add_counts(response_times.get('Women', []), women_counts)
 
-    men_total = len(data_minutes.get('Men', []))
-    women_total = len(data_minutes.get('Women', []))
+    men_total = len(response_times.get('Men', []))
+    women_total = len(response_times.get('Women', []))
 
     x_positions = minute_range / 60.0
     bar_width = 1.0 / 60.0  # one minute in hours for x-axis scaling
@@ -762,7 +740,6 @@ def relationship(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None
             ha='center',
             va='bottom',
             fontweight='bold',
-            fontsize=12,
             color=point_color
         )
         ax.text(
@@ -1051,12 +1028,6 @@ def tSNE(df: pd.DataFrame, output_dir: Path, config: MasterConfig = None) -> Pat
 
     # Create visualization
     fig, ax = style.setup_figure(figsize=(14, 10))
-
-    def _blend_color(base_hex: str, mix_hex: str, ratio: float) -> str:
-        base_rgb = np.array(mcolors.to_rgb(base_hex))
-        mix_rgb = np.array(mcolors.to_rgb(mix_hex))
-        mixed = base_rgb * (1.0 - ratio) + mix_rgb * ratio
-        return mcolors.to_hex(np.clip(mixed, 0.0, 1.0))
 
     def _author_variants(base_hex: str, count: int) -> List[str]:
         return [base_hex] * max(1, count)

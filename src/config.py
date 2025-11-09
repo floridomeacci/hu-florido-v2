@@ -90,6 +90,7 @@ class FigureStyleConfig(BaseModel):
     # Typography
     title_fontsize: int = 32
     subtitle_fontsize: int = 13
+    subtitle_color: str = '#6B7280'
     label_fontsize: int = 14
     legend_fontsize: int = 12
     caption_fontsize: int = 12
