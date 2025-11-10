@@ -1,4 +1,8 @@
-# HU Florido V2
+# Details
+
+https://github.com/floridomeacci/hu-florido-v2
+Florido Jan Meacci
+Student number: 1906345
 
 WhatsApp chat analysis project generating five key visualizations from message data.
 
